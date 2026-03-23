@@ -1,0 +1,266 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #1ABC9C;
+  padding: 0.5rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 1rem;
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  border-radius: 5px;
+  background: white;
+  padding: 2px;
+}
+
+.navbar-brand {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  background: #1ABC9C;
+  padding: 12px 30px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: transform 0.3s, background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #16a085;
+  transform: translateY(-2px);
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 80px 2rem;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.contact-card {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form {
+  margin-top: 2rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.news-events {
+  background: white;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.news-card {
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.1);
+}
+
+.news-content {
+  padding: 1.5rem;
+}
+
+.news-content .date {
+  font-size: 0.9rem;
+  color: #1ABC9C;
+  font-weight: 600;
+}
+
+.news-content h4 {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.read-more {
+  color: #1ABC9C;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: gap 0.3s;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.features .card {
+  animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both;
+}
+
+.features .card:nth-child(2) { animation-delay: 0.2s; }
+.features .card:nth-child(3) { animation-delay: 0.4s; }
+
+.news-card {
+  animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both;
+}
+
+.news-card:nth-child(2) { animation-delay: 0.2s; }
+.news-card:nth-child(3) { animation-delay: 0.4s; }
