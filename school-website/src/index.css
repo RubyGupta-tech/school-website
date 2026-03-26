@@ -3,16 +3,19 @@
 :root {
   --primary: #1a365d;
   --primary-light: #2c5282;
-  --secondary: #d4af37;
-  --accent: #ed8936;
+  --secondary: #FFD700; /* Vibrant Gold */
+  --accent: #FF8C00; /* Bright Orange */
+  --sky-blue: #87CEEB;
   --bg-dark: #0f172a;
-  --bg-light: #f8fafc;
+  --bg-light: #fffdf9; /* Creamy white */
   --text-dark: #1e293b;
   --text-light: #f1f5f9;
-  --glass: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+  --radius-lg: 30px;
+  --radius-md: 20px;
 }
 
 * {
@@ -53,10 +56,10 @@ h1, h2, h3, .logo {
 .card {
   background: white;
   padding: 2.5rem;
-  border-radius: 1rem;
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   transition: var(--transition);
-  border-left: 4px solid var(--secondary);
+  border-bottom: 6px solid var(--secondary);
 }
 
 .card:hover {

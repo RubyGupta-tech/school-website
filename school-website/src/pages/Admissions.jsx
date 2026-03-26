@@ -1,3 +1,5 @@
+import AdmissionForm from "../components/AdmissionForm";
+
 function Admissions() {
   const steps = [
     { title: "Step 1: Inquiry", desc: "Submit the online inquiry form or visit the school office.", icon: "📝" },
@@ -29,12 +31,16 @@ function Admissions() {
       </div>
 
       <div className="admission-actions" style={{ textAlign: 'center', marginTop: '50px' }}>
-        <button className="btn btn-primary" style={{ marginRight: '1rem' }}>
+        <a href="#apply-form" className="btn btn-primary" style={{ marginRight: '1rem' }}>
           Apply Online Now
-        </button>
+        </a>
         <button className="btn" style={{ border: '2px solid var(--primary-color)', color: 'var(--primary-color)' }}>
           Download Prospectus (PDF)
         </button>
+      </div>
+
+      <div style={{ marginTop: '80px' }}>
+        <AdmissionForm />
       </div>
     </div>
   );

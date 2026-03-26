@@ -1,0 +1,54 @@
+.school-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.divider-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  opacity: 0.2;
+}
+
+.divider-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 30px;
+  margin: 0 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+.divider-icon {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  transition: transform 0.5s ease;
+}
+
+.divider-subtitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  opacity: 0.6;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(0); }
+  50% { box-shadow: 0 15px 40px rgba(26, 188, 156, 0.2); transform: translateY(-5px); }
+}
+
+.school-divider:hover .divider-icon {
+  transform: scale(1.3) rotate(5deg);
+}
