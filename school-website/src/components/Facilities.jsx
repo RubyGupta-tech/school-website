@@ -2,10 +2,10 @@ import "./Facilities.css";
 
 function Facilities() {
   const facilityList = [
-    { title: "Digital Library", img: "/facility-library.png", desc: "Access to thousands of books and digital journals." },
-    { title: "Science Labs", img: "/facility-lab.png", desc: "State-of-the-art labs for Physics, Chemistry, and Biology." },
-    { title: "Smart Classrooms", img: "/facility-smart-class.png", desc: "Interactive whiteboards and high-tech leaning tools." },
-    { title: "Sports Complex", img: "/facility-sports.png", desc: "Advanced training facilities for indoor and outdoor sports." }
+    { title: "Play & Activity Zone", img: "/facility-sports.png", desc: "A safe and fun play area where children learn through games, creativity, and outdoor activities." },
+    { title: "Smart Learning Classes", img: "/facility-smart-class.png", desc: "Modern classrooms with interactive tools making learning engaging and effective for young minds." },
+    { title: "Library & Reading Corner", img: "/facility-library.png", desc: "A rich collection of story books and learning material to build reading habits from an early age." },
+    { title: "Science & Activity Lab", img: "/facility-lab.png", desc: "Hands-on activity lab for curiosity-driven experiments and creative exploration for primary students." }
   ];
 
   return (
@@ -13,7 +13,7 @@ function Facilities() {
       <div className="container">
         <div className="section-header">
           <span className="subtitle">Our Infrastructure</span>
-          <h2>World-Class Facilities</h2>
+          <h2>Campus Facilities</h2>
           <div className="divider" style={{ margin: '0 auto' }}></div>
         </div>
 

@@ -9,10 +9,10 @@ function Footer() {
           {/* Column 1: School Identity */}
           <div className="footer-col about-col">
             <div className="footer-logo">
-              <img src="/logo.png" alt="Logo" />
-              <h3>Elite Academy</h3>
+              <img src="/school-logo.png" alt="Kid's Campus Zone School Logo" />
+              <h3>Kid's Campus Zone School</h3>
             </div>
-            <p>Empowering young minds through excellence in education, character building, and innovation since 1995. A place where every child shines.</p>
+            <p>नए कदम, ऊँची उड़ान — जहाँ बचपन सँवरता है और भविष्य बनता है। Empowering young minds through play-based learning and holistic development since 2019.</p>
             <div className="social-links">
               <a href="#" className="social-icon facebook" aria-label="Facebook">
                 <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7h-2.54v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
@@ -33,8 +33,8 @@ function Footer() {
               <li><Link to="/">Home Page</Link></li>
               <li><Link to="/about">About Our School</Link></li>
               <li><Link to="/admissions">Admissions 2025-26</Link></li>
-              <li><Link to="/contact">Contact Support</Link></li>
-              <li><a href="#">School News</a></li>
+              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/faculty">Faculty & Staff</Link></li>
             </ul>
           </div>
 
@@ -45,8 +45,8 @@ function Footer() {
               <li><Link to="/instructions">Registration Instructions</Link></li>
               <li><Link to="/login">New Admission Login</Link></li>
               <li><Link to="/fee-portal" className="highlight-link">Online Fee Payment</Link></li>
-              <li><a href="#">Student ERP Portal</a></li>
-              <li><a href="#">Academic Calendar</a></li>
+              <li><Link to="/vision">Vision & Mission</Link></li>
+              <li><Link to="/school-hours">School Hours</Link></li>
             </ul>
           </div>
 
@@ -54,19 +54,19 @@ function Footer() {
           <div className="footer-col">
             <h4>Find Us</h4>
             <div className="contact-info">
-              <p>📍 <b>Address:</b><br/>Elite Academy Campus, Hazaribagh,<br/>Jharkhand - 825301</p>
-              <p>📞 <b>Phone:</b> +91 91234 56789</p>
-              <p>📧 <b>Email:</b> info@eliteacademy.edu.in</p>
+              <p>📍 <b>Address:</b><br/>Dhengura, Hazaribag,<br/>Jharkhand - 825301</p>
+              <p>📞 <b>Phone:</b> +91 9065611819<br/>+91 9693347953</p>
+              <p>📧 <b>Email:</b> kidscampuszoneschool2019hzb@gmail.com</p>
             </div>
             <div className="footer-badge">
-              Affiliated to CBSE, New Delhi
+              Est. 2019 | We Share, We Care
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2026 Elite Academy. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
-          <p className="credit">Designed for Excellence.</p>
+          <p>&copy; 2026 Kid's Campus Zone School. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+          <p className="credit">नए कदम, ऊँची उड़ान।</p>
         </div>
       </div>
     </footer>
