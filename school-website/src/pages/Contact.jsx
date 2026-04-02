@@ -16,7 +16,8 @@ function Contact() {
     console.log("Inquiry submitted:", form);
     setTimeout(() => {
       setLoading(false);
-      alert("Inquiry Sent Successfully! We will contact you on WhatsApp soon.");
+      alert("पूछताछ सफलतापूर्वक भेजी गई! हम जल्द ही आपसे संपर्क करेंगे।\n(Inquiry Sent Successfully! We will contact you on WhatsApp soon.)");
+      setForm({ name: "", email: "", whatsapp: "", studentClass: "", message: "" });
     }, 1500);
   };
 
@@ -27,31 +28,34 @@ function Contact() {
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem', justifyContent: 'center' }}>
         <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center' }}>
           <span style={{ fontSize: '2rem' }}>📍</span>
-          <h4>Address</h4>
+          <h4>पता (Address)</h4>
           <p>Dhengura, Hazaribag,<br />Jharkhand - 825301</p>
         </div>
         <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center' }}>
           <span style={{ fontSize: '2rem' }}>📞</span>
-          <h4>Phone</h4>
+          <h4>संपर्क (Phone)</h4>
           <p>+91 9065611819<br />+91 9693347953</p>
         </div>
         <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center' }}>
           <span style={{ fontSize: '2rem' }}>📧</span>
-          <h4>Email</h4>
+          <h4>ईमेल (Email)</h4>
           <p style={{ wordBreak: 'break-all' }}>kidscampuszoneschool2019hzb@gmail.com</p>
         </div>
       </div>
 
       {/* Inquiry Form */}
       <div className="contact-card card">
-        <h2>Admission Inquiry</h2>
-        <p>Fill out the form below and we'll get back to you on WhatsApp or email.</p>
+        <h2>प्रवेश पूछताछ (Admission Inquiry)</h2>
+        <p>
+          नीचे दिया गया फॉर्म भरें और हम आपसे WhatsApp या ईमेल पर संपर्क करेंगे।<br />
+          <span style={{ fontSize: '0.9rem', color: '#666' }}>(Fill out the form below and we'll get back to you on WhatsApp or email.)</span>
+        </p>
 
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <input
               type="text"
-              placeholder="Parent / Guardian Full Name"
+              placeholder="अभिभावक का पूरा नाम (Parent / Guardian Full Name)"
               required
               className="form-control"
               value={form.name}
@@ -62,14 +66,14 @@ function Contact() {
           <div className="form-group" style={{ display: 'flex', gap: '1rem' }}>
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder="ईमेल (Email Address)"
               className="form-control"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
             <input
               type="text"
-              placeholder="WhatsApp Number"
+              placeholder="व्हाट्सएप नंबर (WhatsApp Number)"
               required
               className="form-control"
               value={form.whatsapp}
@@ -84,7 +88,7 @@ function Contact() {
               value={form.studentClass}
               onChange={(e) => setForm({ ...form, studentClass: e.target.value })}
             >
-              <option value="">Select Class Seeking Admission</option>
+              <option value="">प्रवेश के लिए कक्षा चुनें (Select Class Seeking Admission)</option>
               <option value="Nursery">Nursery</option>
               <option value="LKG">LKG</option>
               <option value="UKG">UKG</option>
@@ -99,7 +103,7 @@ function Contact() {
 
           <div className="form-group">
             <textarea
-              placeholder="Your Message / Query"
+              placeholder="आपका संदेश / पूछताछ (Your Message / Query)"
               rows="4"
               className="form-control"
               value={form.message}
@@ -108,7 +112,7 @@ function Contact() {
           </div>
 
           <button type="submit" className="btn btn-primary" disabled={loading}>
-            {loading ? "Sending..." : "Submit Inquiry"}
+            {loading ? "Sending..." : "पूछताछ सबमिट करें (Submit Inquiry)"}
           </button>
         </form>
       </div>
