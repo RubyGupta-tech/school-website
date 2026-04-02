@@ -32,17 +32,18 @@ function AdminDashboard() {
         <div className="stats-row">
           <div className="stat-card card">
             <h3>कुल छात्र (Total Students)</h3>
-            <p className="amount">1,240</p>
+            <p className="amount">170</p>
+          </div>
+          <div className="stat-card card">
+            <h3>कुल शिक्षक (Total Teachers)</h3>
+            <p className="amount">6</p>
           </div>
           <div className="stat-card card">
             <h3>नए आवेदन (New Apps)</h3>
             <p className="amount">{inquiries.filter(i => i.status === 'Pending').length}</p>
           </div>
-          <div className="stat-card card">
-            <h3>उपस्थिति (Avg Attendance)</h3>
-            <p className="amount">88%</p>
-          </div>
         </div>
+
 
         {/* Admission Inquiries */}
         <section className="inquiries-section card">
