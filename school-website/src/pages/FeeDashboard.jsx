@@ -25,8 +25,18 @@ function FeeDashboard() {
   if (loading) {
     return (
       <div className="fee-dashboard container section" style={{ marginTop: 'calc(var(--header-height) + 30px)', textAlign: 'center' }}>
-        <h2>सुरक्षित सर्वर से कनेक्ट हो रहा है...<br/><span style={{fontSize:'1.2rem', color:'#666'}}>(Connecting to Secure Server...)</span></h2>
-        <div className="loading-spinner"></div>
+        <div style={{ marginBottom: '30px', animation: 'logoPulse 2s infinite ease-in-out' }}>
+          <img src="/school-logo.png" alt="Kid's Campus Zone logo" style={{ width: '150px' }} />
+        </div>
+        <h2 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>सुरक्षित सर्वर से संपर्क हो रहा है...</h2>
+        <p style={{ fontSize: '1.2rem', color: '#666' }}>(Connecting to Secure Server...)</p>
+        <style>{`
+          @keyframes logoPulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+          }
+        `}</style>
       </div>
     );
   }
