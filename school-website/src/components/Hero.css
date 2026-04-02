@@ -1,11 +1,4 @@
-.hero-slider {
-  position: relative;
-  height: 85vh;
-  margin-top: var(--header-height); /* Aligned with App.css variable */
-  overflow: hidden;
-  background: #f8fafc; /* Change from black to light to see if slides are missing */
-}
-
+/* Ken Burns Effect */
 .hero-slide {
   position: absolute;
   top: 0;
@@ -14,54 +7,67 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  text-align: center;
-  color: white;
 }
 
 .hero-slide.active {
   opacity: 1;
-  z-index: 10;
+  animation: kenBurns 10s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+.hero-slider {
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
 }
 
 .hero-content {
-  max-width: 900px;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  max-width: 800px;
   padding: 0 20px;
   transform: translateY(30px);
-  transition: transform 1s ease-out;
+  opacity: 0;
+  transition: all 0.8s ease-out 0.5s;
 }
 
 .hero-slide.active .hero-content {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .slide-label {
   display: inline-block;
   background: var(--accent-color);
-  color: var(--primary-color);
   padding: 5px 15px;
   border-radius: 50px;
-  font-weight: 700;
   font-size: 0.9rem;
+  font-weight: 700;
   margin-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .hero-content h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 15px;
+  line-height: 1.1;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .hero-content p {
-  font-size: 1.5rem;
-  margin-bottom: 40px;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  margin-bottom: 30px;
   opacity: 0.9;
 }
 
@@ -69,16 +75,6 @@
   display: flex;
   gap: 20px;
   justify-content: center;
-}
-
-.btn-secondary {
-  background: white;
-  color: var(--primary-color);
-}
-
-.btn-secondary:hover {
-  background: #f8f9fa;
-  transform: translateY(-2px);
 }
 
 .slider-dots {
@@ -95,21 +91,13 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
+  border: 2px solid white;
+  background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .dot.active {
   background: white;
-  width: 35px;
-  border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .hero-content h1 { font-size: 2.5rem; }
-  .hero-content p { font-size: 1.1rem; }
-  .hero-btns { flex-direction: column; gap: 10px; }
-  .hero-btns .btn { width: 100%; }
+  transform: scale(1.3);
 }

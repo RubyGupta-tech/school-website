@@ -26,7 +26,13 @@ function Navbar() {
         <div className="navbar-left">
           <Link to="/" className="navbar-logo-link">
             <img src="/school-logo.png" alt="Kid's Campus Zone School Logo" className="navbar-logo" />
-            <span className="navbar-brand">Kid's Campus Zone School</span>
+            <span className="navbar-brand">
+              <span className="brand-red">Kid's</span>{" "}
+              <span className="brand-gold">Campus</span>{" "}
+              <span className="brand-red">Zone</span>{" "}
+              <span className="brand-gold">School</span>
+            </span>
+
           </Link>
         </div>
         <nav className="navbar-right">
