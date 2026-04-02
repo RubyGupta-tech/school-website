@@ -62,3 +62,13 @@ CREATE TABLE IF NOT EXISTS notices (
     is_holiday BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Staff Login/Logout Logs
+CREATE TABLE IF NOT EXISTS staff_logs (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    login_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    logout_time TIMESTAMP,
+    date DATE DEFAULT CURRENT_DATE
+);
+

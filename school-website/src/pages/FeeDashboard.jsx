@@ -79,8 +79,13 @@ function FeeDashboard() {
       { date: "10 April", event: "Id-ul-Fitr (EID)" },
       { date: "14 April", event: "Ambedkar Jayanti" },
       { date: "17 April", event: "Ram Navami" }
+    ],
+    classMessages: [
+      { sender: "Sanjay Kumar (Class Teacher)", message: "Please ensure your child brings a craft kit for tomorrow's activity.", time: "Today, 10:30 AM" },
+      { sender: "Sanjay Kumar (Class Teacher)", message: "Note: Mock test for Mathematics scheduled for Monday.", time: "Yesterday" }
     ]
   };
+
 
   const transactions = [
     { id: "TXN9821", date: "Feb 05, 2024", amount: "₹2,250", status: "सफल (Success)", type: "मासिक शुल्क (Monthly Fee)" },
@@ -132,17 +137,22 @@ function FeeDashboard() {
               </div>
 
               <div className="dashboard-table-container card">
-                <h3>आज के नोटिस (Today's Notices)</h3>
-                <div className="mini-notices">
-                  {portalData.notices.map((n, i) => (
-                    <div key={i} className="notice-item" style={{ marginBottom: '15px', paddingBottom: '10px', borderBottom: '1px solid #f0f4f8' }}>
-                      <span className="notice-date">{n.date}</span>
-                      <h4 style={{ color: 'var(--primary-color)', margin: '5px 0' }}>{n.title}</h4>
-                      <p style={{ fontSize: '0.9rem', color: '#555' }}>{n.content}</p>
-                    </div>
-                  ))}
+                <h3>👩‍🏫 क्लास टीचर के संदेश (Teacher's Messages)</h3>
+                <div className="class-feed">
+                   {portalData.classMessages.map((m, i) => (
+                     <div key={i} className="feed-item" style={{ background: '#f0f7ff', padding: '12px', borderRadius: '8px', marginBottom: '10px', borderLeft: '4px solid #3498db' }}>
+                        <p style={{ margin: 0, fontSize: '0.9rem', color: '#2c3e50' }}>{m.message}</p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px', fontSize: '0.75rem', color: '#7f8c8d' }}>
+                           <span>- {m.sender}</span>
+                           <span>{m.time}</span>
+                        </div>
+                     </div>
+                   ))}
                 </div>
               </div>
+
+              <div className="dashboard-table-container card">
+
             </div>
           )}
 
