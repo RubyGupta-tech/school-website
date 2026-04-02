@@ -2,10 +2,27 @@ function About() {
   return (
     <div className="page-about container section" style={{ marginTop: 'var(--header-height)' }}>
 
+
       {/* Hero Banner */}
-      <div style={{ textAlign: 'center', padding: '2rem 0 1rem' }}>
-        <img src="/school-logo.png" alt="Kid's Campus Zone School Logo" style={{ width: '140px', marginBottom: '1rem' }} />
-        <h1 style={{ fontSize: '2rem', color: '#8B0000' }}>Kid's Campus Zone School</h1>
+      <div style={{ textAlign: 'center', padding: '2rem 0 0' }}>
+        <div style={{ 
+          width: '280px', 
+          height: '250px', 
+          overflow: 'hidden', 
+          margin: '0 auto 0.5rem',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'center'
+        }}>
+          <img 
+            src="/school-logo.png" 
+            alt="Kid's Campus Zone School Logo" 
+            style={{ width: '100%', marginTop: '-10px' }} 
+          />
+        </div>
+        <h1 style={{ fontSize: '2.5rem', color: '#B21E24', marginTop: '0' }}>Kid's Campus Zone School</h1>
+
+
         <p style={{ fontSize: '1.1rem', color: '#555', fontStyle: 'italic', marginBottom: '0.5rem' }}>
           "नए कदम, ऊंची उड़ान"
         </p>
