@@ -25,7 +25,7 @@ function FeeDashboard() {
   if (loading) {
     return (
       <div className="fee-dashboard container section" style={{ marginTop: '150px', textAlign: 'center' }}>
-        <h2>Connecting to Elite Secure Server...</h2>
+        <h2>सुरक्षित सर्वर से कनेक्ट हो रहा है...<br/><span style={{fontSize:'1.2rem', color:'#666'}}>(Connecting to Secure Server...)</span></h2>
         <div className="loading-spinner"></div>
       </div>
     );
@@ -41,9 +41,9 @@ function FeeDashboard() {
   };
 
   const transactions = [
-    { id: "TXN9821", date: "Feb 05, 2024", amount: "₹2,500", status: "Success", type: "Monthly Fee" },
-    { id: "TXN7740", date: "Jan 03, 2024", amount: "₹2,500", status: "Success", type: "Monthly Fee" },
-    { id: "TXN2210", date: "Dec 10, 2023", amount: "₹5,000", status: "Success", type: "Admission Fee" }
+    { id: "TXN9821", date: "Feb 05, 2024", amount: "₹2,500", status: "सफल (Success)", type: "मासिक शुल्क (Monthly Fee)" },
+    { id: "TXN7740", date: "Jan 03, 2024", amount: "₹2,500", status: "सफल (Success)", type: "मासिक शुल्क (Monthly Fee)" },
+    { id: "TXN2210", date: "Dec 10, 2023", amount: "₹5,000", status: "सफल (Success)", type: "प्रवेश शुल्क (Admission Fee)" }
   ];
 
   return (
@@ -58,10 +58,10 @@ function FeeDashboard() {
             <p className="class-info">{feeData.class}</p>
           </div>
           <nav className="dashboard-nav">
-            <button className="active">📊 Overview</button>
-            <button>📜 Payment History</button>
-            <button>📄 My Receipts</button>
-            <button>⚙️ Settings</button>
+            <button className="active">📊 अवलोकन (Overview)</button>
+            <button>📜 भुगतान इतिहास (History)</button>
+            <button>📄 मेरी रसीदें (Receipts)</button>
+            <button>⚙️ सेटिंग्स (Settings)</button>
           </nav>
         </aside>
 
@@ -70,41 +70,41 @@ function FeeDashboard() {
           {/* Stats Row */}
           <div className="stats-row">
             <div className="stat-card card warning">
-              <h3>Outstanding Due</h3>
+              <h3>बकाया राशी (Outstanding Due)</h3>
               <p className="amount">{feeData.totalDue}</p>
-              <span className="subtitle">Pending for {feeData.pendingMonths.length} months</span>
+              <span className="subtitle">{feeData.pendingMonths.length} महीने से लंबित (Pending for {feeData.pendingMonths.length} months)</span>
             </div>
             <div className="stat-card card success">
-              <h3>Last Paid</h3>
+              <h3>अंतिम भुगतान (Last Paid)</h3>
               <p className="amount">{feeData.lastPayment}</p>
-              <span className="subtitle">Receipt #EA-9921</span>
+              <span className="subtitle">रसीद (Receipt) #KCS-9921</span>
             </div>
           </div>
 
           {/* Pending Fees Table */}
           <div className="dashboard-table-container card">
             <div className="table-header">
-              <h3>Next Payments</h3>
-              <button className="btn btn-primary btn-sm" onClick={() => setShowPaymentModal(true)}>Pay All Dues</button>
+              <h3>अगला भुगतान (Next Payments)</h3>
+              <button className="btn btn-primary btn-sm" onClick={() => setShowPaymentModal(true)}>सभी बकाया चुकाएं (Pay All Dues)</button>
             </div>
             <table className="fee-table">
               <thead>
                 <tr>
-                  <th>Particulars</th>
-                  <th>Month</th>
-                  <th>Amount</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th>विवरण (Particulars)</th>
+                  <th>महीना (Month)</th>
+                  <th>राशि (Amount)</th>
+                  <th>स्थिति (Status)</th>
+                  <th>कार्रवाई (Action)</th>
                 </tr>
               </thead>
               <tbody>
                 {feeData.pendingMonths.map((month, index) => (
                   <tr key={index}>
-                    <td>Tuition Fee</td>
+                    <td>शिक्षण शुल्क (Tuition Fee)</td>
                     <td>{month}</td>
                     <td>₹2,250</td>
-                    <td><span className="badge pending">Pending</span></td>
-                    <td><button className="btn-text" onClick={() => setShowPaymentModal(true)}>Pay Now</button></td>
+                    <td><span className="badge pending" style={{ background: '#FFF3CD', color: '#856404' }}>लंबित (Pending)</span></td>
+                    <td><button className="btn-text" onClick={() => setShowPaymentModal(true)} style={{fontWeight:'bold'}}>अभी भुगतान करें (Pay Now)</button></td>
                   </tr>
                 ))}
               </tbody>
@@ -113,15 +113,15 @@ function FeeDashboard() {
 
           {/* Transaction History */}
           <div className="dashboard-table-container card">
-            <h3>Recent Transactions</h3>
+            <h3>हाल के लेनदेन (Recent Transactions)</h3>
             <table className="fee-table">
               <thead>
                 <tr>
-                  <th>Trans. ID</th>
-                  <th>Date</th>
-                  <th>Amount</th>
-                  <th>Type</th>
-                  <th>Status</th>
+                  <th>लेनदेन आईडी (Trans. ID)</th>
+                  <th>तिथि (Date)</th>
+                  <th>राशि (Amount)</th>
+                  <th>प्रकार (Type)</th>
+                  <th>स्थिति (Status)</th>
                 </tr>
               </thead>
               <tbody>
@@ -146,12 +146,12 @@ function FeeDashboard() {
           <div className="payment-card card animation-pop-in">
             <button className="close-modal" onClick={() => setShowPaymentModal(false)}>&times;</button>
             <div className="payment-header">
-              <img src="/logo.png" alt="School" className="mini-logo" />
-              <h3>Secure Checkout</h3>
-              <p>Total Payable: <b style={{ color: 'var(--primary)' }}>{feeData.totalDue}</b></p>
+              <img src="/school-logo.png" alt="Kid's Campus Zone School" className="mini-logo" />
+              <h3>सुरक्षित चेकआउट (Secure Checkout)</h3>
+              <p>कुल देय राशि (Total Payable): <b style={{ color: 'var(--primary)' }}>{feeData.totalDue}</b></p>
             </div>
             <div className="payment-methods">
-              <h4>Select Payment Method</h4>
+              <h4>भुगतान का तरीका चुनें (Select Payment Method)</h4>
               <div className="method-option"><span>UPI</span> (GPay, PhonePe, Paytm)</div>
               <div className="method-option"><span>Card</span> (Debit / Credit)</div>
               <div className="method-option"><span>Net Banking</span></div>
@@ -161,7 +161,7 @@ function FeeDashboard() {
               <span>🛡️ PCI-DSS Compliant</span>
             </div>
             <button className="btn btn-primary full-width" onClick={() => alert("Redirecting to Razorpay...")}>
-              Pay Now Securely
+              सुरक्षित रूप से भुगतान करें (Pay Now Securely)
             </button>
           </div>
         </div>
