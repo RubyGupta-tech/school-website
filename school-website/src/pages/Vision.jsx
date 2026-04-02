@@ -40,20 +40,20 @@ const Vision = () => {
         <h2 style={{ color: 'var(--secondary-color)' }}>हमारे मूल मूल्य <span style={{fontSize: '1.2rem', color: 'rgba(255,255,255,0.7)'}}>| Core Values</span></h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginTop: '30px' }}>
           <div>
-            <h3>अनुशासन</h3>
-            <p style={{ opacity: '0.8', fontStyle: 'italic' }}>Discipline and focus in every action.</p>
+            <h3 style={{ color: 'var(--secondary-color)' }}>अनुशासन</h3>
+            <p style={{ opacity: '0.8', fontStyle: 'italic', color: '#fff' }}>Discipline and focus in every action.</p>
           </div>
           <div>
-            <h3>आधुनिक शिक्षा</h3>
-            <p style={{ opacity: '0.8', fontStyle: 'italic' }}>Modern education strategies.</p>
+            <h3 style={{ color: 'var(--secondary-color)' }}>आधुनिक शिक्षा</h3>
+            <p style={{ opacity: '0.8', fontStyle: 'italic', color: '#fff' }}>Modern education strategies.</p>
           </div>
           <div>
-            <h3>नैतिक मूल्य</h3>
-            <p style={{ opacity: '0.8', fontStyle: 'italic' }}>Moral uprightness and empathy.</p>
+            <h3 style={{ color: 'var(--secondary-color)' }}>नैतिक मूल्य</h3>
+            <p style={{ opacity: '0.8', fontStyle: 'italic', color: '#fff' }}>Moral uprightness and empathy.</p>
           </div>
           <div>
-            <h3>सुरक्षा</h3>
-            <p style={{ opacity: '0.8', fontStyle: 'italic' }}>A secure and nurturing environment.</p>
+            <h3 style={{ color: 'var(--secondary-color)' }}>सुरक्षा</h3>
+            <p style={{ opacity: '0.8', fontStyle: 'italic', color: '#fff' }}>A secure and nurturing environment.</p>
           </div>
         </div>
       </div>
