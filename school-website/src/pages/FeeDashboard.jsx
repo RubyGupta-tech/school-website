@@ -6,6 +6,7 @@ function FeeDashboard() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [studentData, setStudentData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("overview");
 
   useEffect(() => {
     fetch("http://localhost:5000/api/fees/1042")
@@ -41,146 +42,283 @@ function FeeDashboard() {
     );
   }
 
-  const feeData = {
+  const portalData = {
     studentName: studentData?.studentName || "Aryan Gupta",
-    admissionNo: "EA/2024/1042",
-    class: "Class 4-B",
-    totalDue: studentData ? `₹${studentData.amountDue}` : "₹4,500",
-    lastPayment: "₹2,500 (Feb 2024)",
-    pendingMonths: ["March 2024", "April 2024"]
+    admissionNo: "KCS/2024/1042",
+    class: "Class 2-A",
+    parents: {
+      father: "Mr. Rajesh Gupta",
+      mother: "Mrs. Meena Gupta"
+    },
+    attendance: {
+      percentage: "94%",
+      totalDays: 145,
+      present: 136,
+      absent: 9
+    },
+    fees: {
+      totalDue: studentData ? `₹${studentData.amountDue}` : "₹4,500",
+      lastPayment: "₹2,250 (Feb 2024)",
+      pendingMonths: ["March 2024", "April 2024"]
+    },
+    homework: [
+      { subject: "Hindi", task: "कविता 'नन्हा मुन्ना राही हूँ' याद करें और लिखें।", date: "Apply by 05 April" },
+      { subject: "Maths", task: "Solve Pag No. 45 - Addition with Carry over.", date: "Apply by 04 April" },
+      { subject: "English", task: "Write 10 lines about 'My School'.", date: "Apply by 06 April" }
+    ],
+    results: [
+      { exam: "Unit Test - II", subject: "Mathematics", marks: "24/25", grade: "A+" },
+      { exam: "Unit Test - II", subject: "English", marks: "22/25", grade: "A" },
+      { exam: "Unit Test - II", subject: "Science", marks: "25/25", grade: "A+" }
+    ],
+    notices: [
+      { date: "02 April", title: "नए सत्र की शुभकामनाएं!", content: "सभी विद्यार्थियों को नए शैक्षणिक सत्र (2025-26) की हार्दिक शुभकामनाएं।" },
+      { date: "01 April", title: "Dress Code Reminder", content: "Please ensure students wear summer uniforms from 1st April." }
+    ],
+    holidays: [
+      { date: "10 April", event: "Id-ul-Fitr (EID)" },
+      { date: "14 April", event: "Ambedkar Jayanti" },
+      { date: "17 April", event: "Ram Navami" }
+    ]
   };
 
   const transactions = [
-    { id: "TXN9821", date: "Feb 05, 2024", amount: "₹2,500", status: "सफल (Success)", type: "मासिक शुल्क (Monthly Fee)" },
-    { id: "TXN7740", date: "Jan 03, 2024", amount: "₹2,500", status: "सफल (Success)", type: "मासिक शुल्क (Monthly Fee)" },
-    { id: "TXN2210", date: "Dec 10, 2023", amount: "₹5,000", status: "सफल (Success)", type: "प्रवेश शुल्क (Admission Fee)" }
+    { id: "TXN9821", date: "Feb 05, 2024", amount: "₹2,250", status: "सफल (Success)", type: "मासिक शुल्क (Monthly Fee)" },
+    { id: "TXN7740", date: "Jan 03, 2024", amount: "₹2,250", status: "सफल (Success)", type: "मासिक शुल्क (Monthly Fee)" }
   ];
 
   return (
     <div className="fee-dashboard container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="dashboard-grid">
-        {/* Sidebar / Info */}
+        {/* Sidebar */}
         <aside className="dashboard-sidebar card">
           <div className="profile-box">
-            <div className="avatar">AG</div>
-            <h3>{feeData.studentName}</h3>
-            <p className="id-badge">{feeData.admissionNo}</p>
-            <p className="class-info">{feeData.class}</p>
+            <div className="avatar">{portalData.studentName.charAt(0)}</div>
+            <h3>{portalData.studentName}</h3>
+            <p className="id-badge">{portalData.admissionNo}</p>
+            <p className="class-info">{portalData.class}</p>
+            <div className="parent-details" style={{ marginTop: '15px', borderTop: '1px solid #eee', paddingTop: '10px' }}>
+               <p style={{ fontSize: '0.85rem', color: '#666', margin: '2px 0' }}><b>अभिभावक (Parents):</b></p>
+               <p style={{ fontSize: '0.8rem', color: '#333', margin: '1px 0' }}>{portalData.parents.father} (Dad)</p>
+               <p style={{ fontSize: '0.8rem', color: '#333', margin: '1px 0' }}>{portalData.parents.mother} (Mom)</p>
+            </div>
           </div>
           <nav className="dashboard-nav">
-            <button className="active">📊 अवलोकन (Overview)</button>
-            <button>📜 भुगतान इतिहास (History)</button>
-            <button>📄 मेरी रसीदें (Receipts)</button>
-            <button>⚙️ सेटिंग्स (Settings)</button>
+            <button className={activeTab === "overview" ? "active" : ""} onClick={() => setActiveTab("overview")}>📊 अवलोकन (Overview)</button>
+            <button className={activeTab === "academic" ? "active" : ""} onClick={() => setActiveTab("academic")}>📝 होमवर्क और रिजल्ट (Academic)</button>
+            <button className={activeTab === "attendance" ? "active" : ""} onClick={() => setActiveTab("attendance")}>📅 उपस्थिति (Attendance)</button>
+            <button className={activeTab === "fees" ? "active" : ""} onClick={() => setActiveTab("fees")}>💳 शुल्क पोर्टल (Fee Portal)</button>
+            <button className={activeTab === "notices" ? "active" : ""} onClick={() => setActiveTab("notices")}>🔔 नोटिस बोर्ड (Notice Board)</button>
           </nav>
         </aside>
 
-        {/* Main Content */}
+        {/* Main Content Area */}
         <main className="dashboard-main">
-          {/* Stats Row */}
-          <div className="stats-row">
-            <div className="stat-card card warning">
-              <h3>बकाया राशी (Outstanding Due)</h3>
-              <p className="amount">{feeData.totalDue}</p>
-              <span className="subtitle">{feeData.pendingMonths.length} महीने से लंबित (Pending for {feeData.pendingMonths.length} months)</span>
-            </div>
-            <div className="stat-card card success">
-              <h3>अंतिम भुगतान (Last Paid)</h3>
-              <p className="amount">{feeData.lastPayment}</p>
-              <span className="subtitle">रसीद (Receipt) #KCS-9921</span>
-            </div>
-          </div>
+          
+          {/* OVERVIEW TAB */}
+          {activeTab === "overview" && (
+            <div className="animation-fade-in">
+              <div className="stats-row">
+                <div className="stat-card card warning">
+                  <h3>बकाया शुल्क (Fees Due)</h3>
+                  <p className="amount">{portalData.fees.totalDue}</p>
+                  <span className="subtitle">भुगतान लंबित (Payment Pending)</span>
+                </div>
+                <div className="stat-card card info">
+                  <h3>उपस्थिति (Attendance)</h3>
+                  <p className="amount">{portalData.attendance.percentage}</p>
+                  <span className="subtitle">{portalData.attendance.present}/{portalData.attendance.totalDays} दिन (Days)</span>
+                </div>
+              </div>
 
-          {/* Pending Fees Table */}
-          <div className="dashboard-table-container card">
-            <div className="table-header">
-              <h3>अगला भुगतान (Next Payments)</h3>
-              <button className="btn btn-primary btn-sm" onClick={() => setShowPaymentModal(true)}>सभी बकाया चुकाएं (Pay All Dues)</button>
+              <div className="dashboard-table-container card">
+                <h3>आज के नोटिस (Today's Notices)</h3>
+                <div className="mini-notices">
+                  {portalData.notices.map((n, i) => (
+                    <div key={i} className="notice-item" style={{ marginBottom: '15px', paddingBottom: '10px', borderBottom: '1px solid #f0f4f8' }}>
+                      <span className="notice-date">{n.date}</span>
+                      <h4 style={{ color: 'var(--primary-color)', margin: '5px 0' }}>{n.title}</h4>
+                      <p style={{ fontSize: '0.9rem', color: '#555' }}>{n.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <table className="fee-table">
-              <thead>
-                <tr>
-                  <th>विवरण (Particulars)</th>
-                  <th>महीना (Month)</th>
-                  <th>राशि (Amount)</th>
-                  <th>स्थिति (Status)</th>
-                  <th>कार्रवाई (Action)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {feeData.pendingMonths.map((month, index) => (
-                  <tr key={index}>
-                    <td>शिक्षण शुल्क (Tuition Fee)</td>
-                    <td>{month}</td>
-                    <td>₹2,250</td>
-                    <td><span className="badge pending" style={{ background: '#FFF3CD', color: '#856404' }}>लंबित (Pending)</span></td>
-                    <td><button className="btn-text" onClick={() => setShowPaymentModal(true)} style={{fontWeight:'bold'}}>अभी भुगतान करें (Pay Now)</button></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          )}
 
-          {/* Transaction History */}
-          <div className="dashboard-table-container card">
-            <h3>हाल के लेनदेन (Recent Transactions)</h3>
-            <table className="fee-table">
-              <thead>
-                <tr>
-                  <th>लेनदेन आईडी (Trans. ID)</th>
-                  <th>तिथि (Date)</th>
-                  <th>राशि (Amount)</th>
-                  <th>प्रकार (Type)</th>
-                  <th>स्थिति (Status)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {transactions.map((txn, idx) => (
-                  <tr key={idx}>
-                    <td><code>{txn.id}</code></td>
-                    <td>{txn.date}</td>
-                    <td>{txn.amount}</td>
-                    <td>{txn.type}</td>
-                    <td><span className="badge success">{txn.status}</span></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {/* ACADEMIC TAB (Homework & Results) */}
+          {activeTab === "academic" && (
+            <div className="animation-fade-in">
+              <div className="dashboard-table-container card">
+                <h3>गृहकार्य (Homework)</h3>
+                <div className="homework-list">
+                  {portalData.homework.map((hw, i) => (
+                    <div key={i} className="homework-card" style={{ borderLeft: '4px solid var(--accent-color)', padding: '15px', background: '#fffcf9', borderRadius: '8px', marginBottom: '15px', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>{hw.subject}</span>
+                        <span style={{ fontSize: '0.8rem', color: '#e67e22' }}>{hw.date}</span>
+                      </div>
+                      <p style={{ marginTop: '8px', fontSize: '0.95rem' }}>{hw.task}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="dashboard-table-container card">
+                <h3>परीक्षा परिणाम (Exam Results)</h3>
+                <table className="fee-table">
+                  <thead>
+                    <tr>
+                      <th>परीक्षा (Exam)</th>
+                      <th>विषय (Subject)</th>
+                      <th>अंक (Marks)</th>
+                      <th>ग्रेड (Grade)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {portalData.results.map((res, i) => (
+                      <tr key={i}>
+                        <td>{res.exam}</td>
+                        <td>{res.subject}</td>
+                        <td>{res.marks}</td>
+                        <td><b style={{ color: '#27ae60' }}>{res.grade}</b></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {/* ATTENDANCE TAB */}
+          {activeTab === "attendance" && (
+            <div className="animation-fade-in">
+              <div className="dashboard-table-container card" style={{ textAlign: 'center' }}>
+                <h3>कुल उपस्थिति (Overall Attendance)</h3>
+                <div style={{ fontSize: '4rem', fontWeight: '800', color: 'var(--primary-color)', margin: '20px 0' }}>{portalData.attendance.percentage}</div>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
+                  <div className="stat-pill success"><b>उपस्थित (Present):</b> {portalData.attendance.present} दिन</div>
+                  <div className="stat-pill danger"><b>अनुपस्थित (Absent):</b> {portalData.attendance.absent} दिन</div>
+                </div>
+                <p style={{ color: '#666' }}>नियमित उपस्थिति बेहतर भविष्य की कुंजी है।<br/>(Regular attendance is key to a bright future.)</p>
+              </div>
+            </div>
+          )}
+
+          {/* FEES TAB */}
+          {activeTab === "fees" && (
+            <div className="animation-fade-in">
+              <div className="dashboard-table-container card">
+                <div className="table-header">
+                  <h3>बकाया शुल्क (Pending Fees)</h3>
+                  <button className="btn btn-primary btn-sm" onClick={() => setShowPaymentModal(true)}>सभी भुगतान करें (Pay All)</button>
+                </div>
+                <table className="fee-table">
+                  <thead>
+                    <tr>
+                      <th>महीना (Month)</th>
+                      <th>विवरण (Details)</th>
+                      <th>राशि (Amount)</th>
+                      <th>कार्रवाई (Action)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {portalData.fees.pendingMonths.map((month, i) => (
+                      <tr key={i}>
+                        <td>{month}</td>
+                        <td>शिक्षण शुल्क (Tuition Fee)</td>
+                        <td>₹2,250</td>
+                        <td><button className="btn-text" onClick={() => setShowPaymentModal(true)}>Pay Now</button></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="dashboard-table-container card">
+                <h3>लेनदेन का विवरण (Transactions)</h3>
+                <table className="fee-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {transactions.map((txn, i) => (
+                      <tr key={i}>
+                        <td><code>{txn.id}</code></td>
+                        <td>{txn.date}</td>
+                        <td>{txn.amount}</td>
+                        <td><span className="badge success">{txn.status}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {/* NOTICES & HOLIDAYS TAB */}
+          {activeTab === "notices" && (
+            <div className="animation-fade-in">
+              <div className="dashboard-table-container card">
+                <h3>आधिकारिक नोटिस (Official Notices)</h3>
+                <div className="notices-archive">
+                  {portalData.notices.map((n, i) => (
+                    <div key={i} className="notice-card" style={{ padding: '15px', border: '1px solid #eee', borderRadius: '10px', marginBottom: '15px' }}>
+                      <span style={{ fontSize: '0.8rem', color: '#1abc9c', fontWeight: 'bold' }}>{n.date}</span>
+                      <h4 style={{ margin: '5px 0' }}>{n.title}</h4>
+                      <p style={{ color: '#555', fontSize: '0.9rem' }}>{n.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="dashboard-table-container card">
+                <h3 style={{ color: '#e67e22' }}>आगामी अवकाश (Upcoming Holidays)</h3>
+                <div className="holiday-list">
+                  {portalData.holidays.map((h, i) => (
+                    <div key={i} className="holiday-item" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px', borderBottom: '1px solid #f9f9f9' }}>
+                      <span style={{ fontWeight: '600' }}>{h.event}</span>
+                      <span style={{ color: '#666' }}>{h.date}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
         </main>
       </div>
 
-      {/* Mock Payment Modal */}
+      {/* Payment Modal */}
       {showPaymentModal && (
         <div className="payment-modal-overlay">
           <div className="payment-card card animation-pop-in">
             <button className="close-modal" onClick={() => setShowPaymentModal(false)}>&times;</button>
             <div className="payment-header">
-              <img src="/school-logo.png" alt="Kid's Campus Zone School" className="mini-logo" />
+              <img src="/school-logo.png" alt="Logo" className="mini-logo" />
               <h3>सुरक्षित चेकआउट (Secure Checkout)</h3>
-              <p>कुल देय राशि (Total Payable): <b style={{ color: 'var(--primary)' }}>{feeData.totalDue}</b></p>
+              <p>कुल देय राशि: <b style={{ color: 'var(--primary)' }}>{portalData.fees.totalDue}</b></p>
             </div>
             <div className="payment-methods">
-              <h4>भुगतान का तरीका चुनें (Select Payment Method)</h4>
-              <div className="method-option"><span>UPI</span> (GPay, PhonePe, Paytm)</div>
-              <div className="method-option"><span>Card</span> (Debit / Credit)</div>
+              <div className="method-option"><span>UPI</span> GPay, PhonePe, Paytm</div>
+              <div className="method-option"><span>Card</span> Debit / Credit</div>
               <div className="method-option"><span>Net Banking</span></div>
             </div>
-            <div className="security-badges">
-              <span>🔒 256-bit SSL</span>
-              <span>🛡️ PCI-DSS Compliant</span>
-            </div>
-            <button className="btn btn-primary full-width" onClick={() => alert("Redirecting to Razorpay...")}>
-              सुरक्षित रूप से भुगतान करें (Pay Now Securely)
-            </button>
+            <button className="btn btn-primary full-width" onClick={() => alert("Redirecting to Bank...")}>Pay Now Securely</button>
           </div>
         </div>
       )}
-      
-      {/* Decorative footer sticker */}
-      <img src="/kids-sticker.png" alt="Happy Kids Drawing" style={{ width: '100%', maxWidth: '600px', margin: '40px auto 0', display: 'block', opacity: '0.9', mixBlendMode: 'multiply' }} />
+
+      {/* Decoration */}
+      <img src="/kids-sticker.png" alt="Decoration" style={{ width: '100%', maxWidth: '500px', margin: '40px auto 0', display: 'block', opacity: '0.8', mixBlendMode: 'multiply' }} />
     </div>
   );
 }
 
 export default FeeDashboard;
+

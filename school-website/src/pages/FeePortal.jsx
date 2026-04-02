@@ -14,10 +14,10 @@ function FeePortal() {
     
     // Professional Demo Validation
     const inputId = formData.admissionNo.trim().toUpperCase();
-    if (inputId === "EA/2024/1042" || inputId === "1042") {
+    if (inputId === "KCS/2024/1042" || inputId === "1042") {
       navigate("/fee-dashboard");
     } else {
-      alert("कृपया प्रवेश संख्या (Admission No): EA/2024/1042 का उपयोग करें\n\n(Tip: You can also just type '1042' to test)");
+      alert("कृपया प्रवेश संख्या (Admission No): KCS/2024/1042 का उपयोग करें\n\n(Tip: You can also just type '1042' to test)");
     }
   };
 
@@ -25,21 +25,21 @@ function FeePortal() {
     <div className="login-page container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="login-card card" style={{ borderBottomColor: 'var(--primary)' }}>
         <div className="login-header">
-          <div className="login-icon">💳</div>
-          <h1>छात्र शुल्क पोर्टल (Fee Portal)</h1>
+          <div className="login-icon">👨‍👩‍👧‍👦</div>
+          <h1>छात्र एवं अभिभावक पोर्टल (Student & Parent Portal)</h1>
           <p>
-            ऑनलाइन फीस जमा करने के लिए अपने प्रवेश संख्या से लॉगिन करें।<br />
-            <span style={{ fontSize: '0.9rem', color: '#666' }}>(Login with your Admission Number to pay fees online)</span>
+            होमवर्क, रिजल्ट, उपस्थिति और फीस विवरण देखने के लिए लॉगिन करें।<br />
+            <span style={{ fontSize: '0.9rem', color: '#666' }}>(Login to view Homework, Results, Attendance and Fee details)</span>
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
-            <label>प्रवेश संख्या (Admission Number) * (Ex: 2024/1042)</label>
+            <label>प्रवेश संख्या (Admission Number) * (Ex: KCS/2024/1042)</label>
             <input 
               type="text" 
               required 
-              placeholder="अपना छात्र आईडी दर्ज करें (Enter your Student ID)"
+              placeholder="छात्र आईडी दर्ज करें (Enter Student ID)"
               value={formData.admissionNo}
               onChange={(e) => setFormData({...formData, admissionNo: e.target.value})}
             />
@@ -60,7 +60,7 @@ function FeePortal() {
           </div>
 
           <button type="submit" className="btn btn-primary full-width" style={{ background: 'var(--primary)' }}>
-            भुगतान के लिए आगे बढ़ें (Proceed to Payment)
+            पोर्टल में प्रवेश करें (Enter Portal)
           </button>
         </form>
 

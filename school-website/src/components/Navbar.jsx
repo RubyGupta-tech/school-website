@@ -10,7 +10,7 @@ function Navbar() {
           <span>📧 kidscampuszoneschool2019hzb@gmail.com</span>
         </div>
         <div className="top-bar-right">
-          <Link to="/fee-portal" className="top-link">Online Payment Portal</Link>
+          <Link to="/fee-portal" className="top-link">Student & Parent Portal</Link>
           <a href="/admissions" className="top-link highlight">Click here to apply for Admission</a>
         </div>
       </div>
@@ -43,7 +43,7 @@ function Navbar() {
           </div>
           <Link to="/about">About Us</Link>
           <Link to="/admissions">Admissions</Link>
-          <Link to="/fee-portal" className="btn-pay">Pay Fees</Link>
+          <Link to="/fee-portal" className="btn-pay">Student Portal</Link>
           <Link to="/contact">Contact</Link>
         </nav>
       </header>
