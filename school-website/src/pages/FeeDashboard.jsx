@@ -166,6 +166,9 @@ function FeeDashboard() {
           </div>
         </div>
       )}
+      
+      {/* Decorative footer sticker */}
+      <img src="/kids-sticker.png" alt="Happy Kids Drawing" style={{ width: '100%', maxWidth: '600px', margin: '40px auto 0', display: 'block', opacity: '0.9', mixBlendMode: 'multiply' }} />
     </div>
   );
 }
