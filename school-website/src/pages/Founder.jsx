@@ -2,7 +2,7 @@ import React from 'react';
 
 const Founder = () => {
   return (
-    <div className="container section" style={{ marginTop: '120px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="page-header">
         <h1>Our Director</h1>
         <p className="subtitle" style={{ color: '#8B0000', fontWeight: '600' }}>The Visionary Behind Kid's Campus Zone School</p>

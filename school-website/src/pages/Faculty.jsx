@@ -11,7 +11,7 @@ const Faculty = () => {
   ];
 
   return (
-    <div className="container section" style={{ marginTop: '120px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="page-header">
         <h1>Faculty & Staff</h1>
         <p className="subtitle">The Pillars of Our Institution</p>

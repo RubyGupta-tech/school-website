@@ -22,7 +22,7 @@ function Contact() {
   };
 
   return (
-    <div className="container section" style={{ marginTop: '100px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
 
       {/* Contact Info Cards */}
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem', justifyContent: 'center' }}>

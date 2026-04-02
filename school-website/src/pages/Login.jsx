@@ -14,7 +14,7 @@ function Login() {
   };
 
   return (
-    <div className="login-page container section" style={{ marginTop: '120px' }}>
+    <div className="login-page container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="login-card card">
         <div className="login-header">
           <div className="login-icon">🏫</div>

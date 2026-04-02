@@ -2,7 +2,7 @@ import React from 'react';
 
 const Principal = () => {
   return (
-    <div className="container section" style={{ marginTop: '120px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="page-header">
         <h1>From The Principal's Desk</h1>
         <p className="subtitle" style={{ color: '#8B0000', fontWeight: '600' }}>Leading with Heart and Mind</p>

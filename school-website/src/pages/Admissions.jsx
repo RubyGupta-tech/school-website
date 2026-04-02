@@ -9,7 +9,7 @@ function Admissions() {
   ];
 
   return (
-    <div className="page-admissions container section" style={{ marginTop: '100px' }}>
+    <div className="page-admissions container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="section-header">
         <span className="subtitle">हमारे समुदाय से जुड़ें (Join Our Community)</span>
         <h1>प्रवेश (Admissions) 2025-26</h1>

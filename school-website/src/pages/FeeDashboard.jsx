@@ -24,7 +24,7 @@ function FeeDashboard() {
 
   if (loading) {
     return (
-      <div className="fee-dashboard container section" style={{ marginTop: '150px', textAlign: 'center' }}>
+      <div className="fee-dashboard container section" style={{ marginTop: 'calc(var(--header-height) + 30px)', textAlign: 'center' }}>
         <h2>सुरक्षित सर्वर से कनेक्ट हो रहा है...<br/><span style={{fontSize:'1.2rem', color:'#666'}}>(Connecting to Secure Server...)</span></h2>
         <div className="loading-spinner"></div>
       </div>
@@ -47,7 +47,7 @@ function FeeDashboard() {
   ];
 
   return (
-    <div className="fee-dashboard container section" style={{ marginTop: '100px' }}>
+    <div className="fee-dashboard container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="dashboard-grid">
         {/* Sidebar / Info */}
         <aside className="dashboard-sidebar card">

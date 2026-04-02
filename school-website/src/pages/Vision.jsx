@@ -2,7 +2,7 @@ import React from 'react';
 
 const Vision = () => {
   return (
-    <div className="container section" style={{ marginTop: '120px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="page-header">
         <h1>हमारा उद्देश्य | Vision & Mission</h1>
         <p className="subtitle">Defining Our Purpose and Future</p>

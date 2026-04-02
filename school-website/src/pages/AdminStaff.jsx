@@ -9,7 +9,7 @@ const AdminStaff = () => {
   ];
 
   return (
-    <div className="container section" style={{ marginTop: '120px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="page-header">
         <h1>Administrative Staff 2024-2025</h1>
         <p className="subtitle">Ensuring Smooth Operations Every Day</p>

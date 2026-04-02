@@ -1,7 +1,7 @@
 .hero-slider {
   position: relative;
   height: 85vh;
-  margin-top: 120px; /* Aligned with App.css */
+  margin-top: var(--header-height); /* Aligned with App.css variable */
   overflow: hidden;
   background: #f8fafc; /* Change from black to light to see if slides are missing */
 }

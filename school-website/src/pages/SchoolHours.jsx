@@ -2,7 +2,7 @@ import React from 'react';
 
 const SchoolHours = () => {
   return (
-    <div className="container section" style={{ marginTop: '120px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="page-header">
         <h1>School Hours</h1>
         <p className="subtitle">Standard Timings for Academic Sessions</p>

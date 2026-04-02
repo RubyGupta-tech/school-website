@@ -2,7 +2,7 @@ import React from 'react';
 
 const History = () => {
   return (
-    <div className="container section" style={{ marginTop: '120px' }}>
+    <div className="container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="page-header">
         <h1>हमारा इतिहास (Our History)</h1>
         <p className="subtitle">एक समृद्ध शुरुआत 2019 से (A Legacy Since 2019)</p>

@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="page-about container section" style={{ marginTop: '100px' }}>
+    <div className="page-about container section" style={{ marginTop: 'var(--header-height)' }}>
 
       {/* Hero Banner */}
       <div style={{ textAlign: 'center', padding: '2rem 0 1rem' }}>

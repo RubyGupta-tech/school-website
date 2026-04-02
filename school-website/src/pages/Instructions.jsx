@@ -3,7 +3,7 @@ import "./Instructions.css";
 
 function Instructions() {
   return (
-    <div className="instructions-page container section" style={{ marginTop: '120px' }}>
+    <div className="instructions-page container section" style={{ marginTop: 'var(--header-height)' }}>
       <div className="instructions-card card">
         <div className="instructions-header">
           <h1>Registration Instructions</h1>
