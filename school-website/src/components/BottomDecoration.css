@@ -1,0 +1,60 @@
+.bottom-decoration {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  overflow: visible;
+}
+
+.grass-container {
+  width: 100%;
+  height: 30px;
+  background: 
+    repeating-linear-gradient(45deg, #2ecc71, #2ecc71 10px, #27ae60 10px, #27ae60 20px);
+  border-top: 4px solid #27ae60;
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+.flower {
+  position: absolute;
+  font-size: 1.5rem;
+  bottom: 20px;
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+.flower-1 { left: 5%; animation-delay: 0s; }
+.flower-2 { left: 15%; animation-delay: 0.5s; font-size: 1.2rem;}
+.flower-3 { left: 45%; animation-delay: 1s; }
+.flower-4 { left: 75%; animation-delay: 0.2s; font-size: 1.3rem;}
+.flower-5 { left: 90%; animation-delay: 0.7s; }
+
+.butterfly {
+  position: absolute;
+  font-size: 1.8rem;
+  bottom: 80px;
+  animation: flutter 15s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes flutter {
+  0% { transform: translate(-10vw, 0) rotate(0deg); }
+  25% { transform: translate(25vw, -30px) rotate(10deg); }
+  50% { transform: translate(50vw, 20px) rotate(-10deg); }
+  75% { transform: translate(75vw, -30px) rotate(10deg); }
+  100% { transform: translate(110vw, 0) rotate(0deg); }
+}
+
+.butterfly-1 { animation-duration: 20s; animation-delay: 0s; }
+.butterfly-2 { animation-duration: 25s; animation-delay: 10s; }

@@ -22,14 +22,18 @@ import PortalLogin from "./pages/PortalLogin";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import FloatingBackground from "./components/FloatingBackground";
+import BottomDecoration from "./components/BottomDecoration";
 import "./App.css";
+
 
 
 function App() {
   return (
     <BrowserRouter>
       <FloatingBackground />
+      <BottomDecoration />
       <Navbar />
+
       
       <main className="content">
         <Routes>
