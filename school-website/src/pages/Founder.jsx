@@ -23,7 +23,9 @@ const Founder = () => {
         </div>
 
         <div className="founder-message" style={{ lineHeight: '1.8' }}>
-          <h3 style={{ color: 'var(--accent-color)', marginBottom: '20px' }}>कुशल मार्गदर्शन और प्रगति (Guidance & Progress)</h3>
+          <h3 style={{ color: 'var(--primary-color)', fontWeight: '800', fontSize: '1.5rem', marginBottom: '20px', borderBottom: '2px solid var(--primary-color)', paddingBottom: '10px', display: 'inline-block' }}>
+            कुशल मार्गदर्शन और प्रगति (Guidance & Progress)
+          </h3>
           
           <p style={{ fontSize: '1.2rem', marginBottom: '20px' }}>
             सरवर सर के कुशल मार्गदर्शन में स्कूल निरंतर प्रगति कर रहा है। उनका विजन बच्चों को गुणवत्तापूर्ण और आधुनिक शिक्षा के साथ-साथ एक मजबूत आधार प्रदान करना है।
