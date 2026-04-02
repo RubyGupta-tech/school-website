@@ -8,7 +8,10 @@ function Navbar() {
           <span>📞 +91 90656 11819</span>
           <span className="separator">|</span>
           <span>📧 kidscampuszoneschool2019hzb@gmail.com</span>
+          <span className="separator">|</span>
+          <Link to="/portal-login" className="top-link" style={{ fontWeight: 'bold', color: '#ffd700' }}>Staff Login</Link>
         </div>
+
         <div className="top-bar-right">
           <Link to="/fee-portal" className="top-link">Student & Parent Portal</Link>
           <a href="/admissions" className="top-link highlight">Click here to apply for Admission</a>

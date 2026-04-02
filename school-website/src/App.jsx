@@ -18,7 +18,11 @@ import Founder from "./pages/Founder";
 import Principal from "./pages/Principal";
 import Faculty from "./pages/Faculty";
 import AdminStaff from "./pages/AdminStaff";
+import PortalLogin from "./pages/PortalLogin";
+import TeacherDashboard from "./pages/TeacherDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 import "./App.css";
+
 
 function App() {
   return (
@@ -43,6 +47,10 @@ function App() {
           <Route path="/principal" element={<Principal />} />
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/admin-staff" element={<AdminStaff />} />
+          <Route path="/portal-login" element={<PortalLogin />} />
+          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
         </Routes>
       </main>
 

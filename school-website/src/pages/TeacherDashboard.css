@@ -1,0 +1,78 @@
+.teacher-dashboard h1 {
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+  padding: 30px;
+  border-left: 5px solid var(--primary-color);
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.attendance-table th {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #eee;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.attendance-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.attendance-options {
+  display: flex;
+  gap: 10px;
+}
+
+.status-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.status-btn.p:hover, .status-btn.p.active { background: #27ae60; color: white; border-color: #27ae60; }
+.status-btn.a:hover, .status-btn.a.active { background: #e74c3c; color: white; border-color: #e74c3c; }
+.status-btn.l:hover, .status-btn.l.active { background: #f39c12; color: white; border-color: #f39c12; }
+
+.homework-form .form-group {
+  margin-bottom: 20px;
+}
+
+.homework-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.homework-form select, 
+.homework-form textarea, 
+.homework-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.homework-form textarea {
+  resize: vertical;
+}
+
+@media (max-width: 992px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
