@@ -104,18 +104,20 @@
 }
 
 .navbar-logo {
-  height: 50px;
+  height: 140px;
   width: auto;
-  border-radius: 5px;
+  border-radius: 8px;
   background: white;
-  padding: 2px;
+  padding: 5px;
 }
 
 .navbar-brand {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   letter-spacing: 0.5px;
+  color: var(--primary-color);
+  text-transform: uppercase;
 }
 
 .navbar nav {
