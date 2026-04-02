@@ -98,7 +98,42 @@
 
 .insight-card .insight-icon { font-size: 1.5rem; }
 
+.attendance-options {
+  display: flex;
+  gap: 12px;
+}
+
+.status-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.status-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.status-btn.p.active { background: #27ae60; color: white; border-color: #219150; }
+.status-btn.a.active { background: #e74c3c; color: white; border-color: #c0392b; }
+.status-btn.l.active { background: #f39c12; color: white; border-color: #d35400; }
+
+.status-btn.p:hover:not(.active) { color: #27ae60; border-color: #27ae60; }
+.status-btn.a:hover:not(.active) { color: #e74c3c; border-color: #e74c3c; }
+.status-btn.l:hover:not(.active) { color: #f39c12; border-color: #f39c12; }
+
 @media (max-width: 992px) {
+
   .dashboard-layout { grid-template-columns: 1fr; }
   .teacher-sidebar { position: static; }
 }
