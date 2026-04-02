@@ -64,7 +64,7 @@ function AdmissionForm() {
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Server is offline. Please ensure the backend is running.");
+      alert("Server is offline. Please ensure the backend is running. (सर्वर ऑफ़लाइन है। कृपया सुनिश्चित करें कि बैकएंड चल रहा है।)");
     } finally {
       setLoading(false);
     }
@@ -74,10 +74,10 @@ function AdmissionForm() {
     return (
       <div className="admission-success card">
         <div className="success-icon">🎉</div>
-        <h2>Registration Successful!</h2>
-        <p>Your application ID is <b>EAH-2025-{(Math.random()*10000).toFixed(0)}</b>.</p>
-        <p>Please check your WhatsApp (<b>{formData.whatsapp}</b>) for the acknowledgement slip and further instructions.</p>
-        <button className="btn btn-primary" onClick={() => window.location.reload()}>Finish</button>
+        <h2>पंजीकरण सफल! (Registration Successful!)</h2>
+        <p>आपका आवेदन आईडी है (Your application ID is) <b>KCS-2025-{(Math.random()*10000).toFixed(0)}</b>.</p>
+        <p>कृपया पावती पर्ची और आगे के निर्देशों के लिए अपना व्हाट्सएप (<b>{formData.whatsapp}</b>) जांचें।<br/><span style={{fontSize:'0.9rem'}}>(Please check your WhatsApp for the acknowledgement slip and further instructions.)</span></p>
+        <button className="btn btn-primary" onClick={() => window.location.reload()}>समाप्त (Finish)</button>
       </div>
     );
   }
@@ -87,18 +87,17 @@ function AdmissionForm() {
       <div className="form-card card">
         <div className="form-header">
           <div className="form-header-top">
-            <div className="step-indicator">Step {step} of 3</div>
+            <div className="step-indicator">चरण (Step) {step} / 3</div>
             <div className="header-links">
-              <Link to="/instructions" className="instructions-link">📜 Instructions</Link>
-              <Link to="/login" className="login-link">🔐 Login</Link>
+              <Link to="/instructions" className="instructions-link">📜 निर्देश (Instructions)</Link>
+              <Link to="/login" className="login-link">🔐 लॉगिन (Login)</Link>
             </div>
           </div>
-          <h2>New Registration Form</h2>
+          <h2>नया पंजीकरण फॉर्म (New Registration Form)</h2>
           
-          <div className="registration-note">
-            <b>Note:</b> Before you fill in this Registration Form, kindly read the Instructions on Top-Right. 
-            All the entries must be in <b>CAPITAL LETTERS</b>. 
-            DOB once entered in this form will not be editable later.
+          <div className="registration-note" style={{ lineHeight: '1.6' }}>
+            <b>ध्यान दें (Note):</b> फॉर्म भरने से पहले ऊपर दिए गए निर्देश पढ़ें। <b>(Read the instructions on Top-Right first.)</b><br/>
+            सभी प्रविष्टियां <b>बड़े अक्षरों (CAPITAL LETTERS)</b> में होनी चाहिए। जन्म तिथि (DOB) बाद में बदली नहीं जा सकेगी।
           </div>
         </div>
 
@@ -106,35 +105,35 @@ function AdmissionForm() {
           {step === 1 && (
             <div className="form-step-content animation-fade-in">
               <div className="form-group full">
-                <h3>👶 Section 1: Student Information</h3>
+                <h3>👶 Section 1: छात्र की जानकारी (Student Information)</h3>
                 <div className="form-divider"></div>
               </div>
               
               <div className="form-grid">
                 <div className="form-group">
-                  <label>First Name (Capital) *</label>
+                  <label>प्रथम नाम (First Name) *</label>
                   <input type="text" required placeholder="FIRST NAME" value={formData.studentFirstName} onChange={(e) => setFormData({...formData, studentFirstName: e.target.value.toUpperCase()})} />
                 </div>
                 <div className="form-group">
-                  <label>Last Name (Capital) *</label>
+                  <label>अंतिम नाम (Last Name) *</label>
                   <input type="text" required placeholder="LAST NAME" value={formData.studentLastName} onChange={(e) => setFormData({...formData, studentLastName: e.target.value.toUpperCase()})} />
                 </div>
                 <div className="form-group">
-                  <label>Date of Birth *</label>
+                  <label>जन्म तिथि (Date of Birth) *</label>
                   <input type="date" required value={formData.dob} onChange={(e) => setFormData({...formData, dob: e.target.value})} />
                 </div>
                 <div className="form-group">
-                  <label>Gender *</label>
+                  <label>लिंग (Gender) *</label>
                   <select required value={formData.gender} onChange={(e) => setFormData({...formData, gender: e.target.value})}>
-                    <option value="">Select</option>
-                    <option value="Male">Boy</option>
-                    <option value="Female">Girl</option>
+                    <option value="">चुनें (Select)</option>
+                    <option value="Male">लड़का (Boy)</option>
+                    <option value="Female">लड़की (Girl)</option>
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Class Seeking Admission *</label>
+                  <label>प्रवेश के लिए कक्षा (Class Seeking Admission) *</label>
                   <select required value={formData.admissionClass} onChange={(e) => setFormData({...formData, admissionClass: e.target.value})}>
-                    <option value="">Select Class</option>
+                    <option value="">कक्षा चुनें (Select Class)</option>
                     <option value="Nursery">Nursery</option>
                     <option value="LKG">LKG</option>
                     <option value="UKG">UKG</option>
@@ -146,9 +145,9 @@ function AdmissionForm() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Category under which you are applying : (you may apply under ONE Category only) *</label>
+                  <label>श्रेणी (Category) *</label>
                   <select required value={formData.category} onChange={(e) => setFormData({...formData, category: e.target.value})}>
-                    <option value="">Select Category</option>
+                    <option value="">श्रेणी चुनें (Select Category)</option>
                     <option value="General">General</option>
                     <option value="OBC">OBC</option>
                     <option value="SC">SC</option>
@@ -156,13 +155,13 @@ function AdmissionForm() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Religion *</label>
-                  <input type="text" placeholder="Ex: CHRISTIANITY / HINDUISM" value={formData.religion} onChange={(e) => setFormData({...formData, religion: e.target.value.toUpperCase()})} />
+                  <label>धर्म (Religion) *</label>
+                  <input type="text" placeholder="Ex: HINDUISM / ISLAM" value={formData.religion} onChange={(e) => setFormData({...formData, religion: e.target.value.toUpperCase()})} />
                 </div>
                 <div className="form-group">
-                  <label>Blood Group</label>
+                  <label>रक्त समूह (Blood Group)</label>
                   <select value={formData.bloodGroup} onChange={(e) => setFormData({...formData, bloodGroup: e.target.value})}>
-                    <option value="">Select</option>
+                    <option value="">चुनें (Select)</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
                     <option value="B+">B+</option>
@@ -175,7 +174,7 @@ function AdmissionForm() {
                 </div>
               </div>
               <div className="form-nav">
-                <button type="button" className="btn btn-primary" onClick={nextStep}>Next: Family Details →</button>
+                <button type="button" className="btn btn-primary" onClick={nextStep}>अगला: परिवार का विवरण (Next: Family Details) →</button>
               </div>
             </div>
           )}
@@ -183,38 +182,38 @@ function AdmissionForm() {
           {step === 2 && (
             <div className="form-step-content animation-fade-in">
               <div className="form-group full">
-                <h3>👨‍👩‍👧 Section 2: Parent / Guardian Information</h3>
+                <h3>👨‍👩‍👧 Section 2: माता-पिता / अभिभावक की जानकारी (Parent / Guardian Info)</h3>
                 <div className="form-divider"></div>
               </div>
               <div className="form-grid">
                 <div className="form-group">
-                  <label>Father's Name (Capital) *</label>
+                  <label>पिता का नाम (Father's Name) *</label>
                   <input type="text" required value={formData.fatherName} onChange={(e) => setFormData({...formData, fatherName: e.target.value.toUpperCase()})} />
                 </div>
                 <div className="form-group">
-                  <label>Father's Occupation *</label>
+                  <label>पिता का व्यवसाय (Father's Occupation) *</label>
                   <input type="text" required value={formData.fatherOcc} onChange={(e) => setFormData({...formData, fatherOcc: e.target.value.toUpperCase()})} />
                 </div>
                 <div className="form-group">
-                  <label>Father's Mobile (WhatsApp) *</label>
+                  <label>पिता का मोबाइल (Father's Mobile) *</label>
                   <input type="tel" required value={formData.fatherMobile} onChange={(e) => setFormData({...formData, fatherMobile: e.target.value})} />
                 </div>
                 <div className="form-group">
-                  <label>Mother's Name (Capital) *</label>
+                  <label>माता का नाम (Mother's Name) *</label>
                   <input type="text" required value={formData.motherName} onChange={(e) => setFormData({...formData, motherName: e.target.value.toUpperCase()})} />
                 </div>
                 <div className="form-group">
-                  <label>Mother's Mobile</label>
+                  <label>माता का मोबाइल (Mother's Mobile)</label>
                   <input type="tel" value={formData.motherMobile} onChange={(e) => setFormData({...formData, motherMobile: e.target.value})} />
                 </div>
                 <div className="form-group">
-                  <label>Annual Family Income</label>
+                  <label>वार्षिक पारिवारिक आय (Annual Family Income)</label>
                   <input type="text" value={formData.fatherIncome} onChange={(e) => setFormData({...formData, fatherIncome: e.target.value})} />
                 </div>
               </div>
               <div className="form-nav">
-                <button type="button" className="btn" onClick={prevStep}>← Back</button>
-                <button type="button" className="btn btn-primary" onClick={nextStep}>Next: Address Details →</button>
+                <button type="button" className="btn" onClick={prevStep}>← पीछे (Back)</button>
+                <button type="button" className="btn btn-primary" onClick={nextStep}>अगला: पता विवरण (Next: Address Details) →</button>
               </div>
             </div>
           )}
@@ -222,28 +221,28 @@ function AdmissionForm() {
           {step === 3 && (
             <div className="form-step-content animation-fade-in">
               <div className="form-group full">
-                <h3>🏠 Section 3: Contact & Address</h3>
+                <h3>🏠 Section 3: संपर्क और पता (Contact & Address)</h3>
                 <div className="form-divider"></div>
               </div>
               <div className="form-grid">
                 <div className="form-group full">
-                  <label>Residential Address (Capital Letters) *</label>
+                  <label>आवासीय पता (Residential Address) *</label>
                   <textarea rows="3" required value={formData.address} onChange={(e) => setFormData({...formData, address: e.target.value.toUpperCase()})}></textarea>
                 </div>
                 <div className="form-group">
-                  <label>City *</label>
+                  <label>शहर (City) *</label>
                   <input type="text" required value={formData.city} onChange={(e) => setFormData({...formData, city: e.target.value.toUpperCase()})} />
                 </div>
                 <div className="form-group">
-                  <label>PIN Code *</label>
+                  <label>पिन कोड (PIN Code) *</label>
                   <input type="text" required value={formData.pin} onChange={(e) => setFormData({...formData, pin: e.target.value})} />
                 </div>
                 <div className="form-group">
-                  <label>Email Address</label>
+                  <label>ईमेल (Email Address)</label>
                   <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
                 </div>
                 <div className="form-group">
-                  <label>WhatsApp Number (Primary) *</label>
+                  <label>व्हाट्सएप नंबर (WhatsApp Number) *</label>
                   <input type="tel" required value={formData.whatsapp} onChange={(e) => setFormData({...formData, whatsapp: e.target.value})} />
                 </div>
               </div>
@@ -256,9 +255,12 @@ function AdmissionForm() {
                       checked={formData.declaration1}
                       onChange={(e) => setFormData({...formData, declaration1: e.target.checked})}
                     />
-                    <label htmlFor="decl1">I hereby declare that the date of birth given above is correct and I shall not ask for its alteration at any time in future. *</label>
+                    <label htmlFor="decl1" style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>
+                      मैं घोषणा करता/करती हूँ कि दी गई जन्म तिथि सही है और भविष्य में इसे बदलने का अनुरोध नहीं करूँगा/करूँगी।<br/>
+                      (I hereby declare that the date of birth given above is correct and I shall not ask for its alteration at any time in future.) *
+                    </label>
                   </div>
-                  <div className="declaration-item">
+                  <div className="declaration-item" style={{ marginTop: '10px' }}>
                     <input 
                       type="checkbox" 
                       required 
@@ -266,7 +268,10 @@ function AdmissionForm() {
                       checked={formData.declaration2}
                       onChange={(e) => setFormData({...formData, declaration2: e.target.checked})}
                     />
-                    <label htmlFor="decl2">I also accept the Management’s decision regarding admission or dismissal as final. *</label>
+                    <label htmlFor="decl2" style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>
+                      मैं प्रवेश या निष्कासन के संबंध में प्रबंधन के निर्णय को अंतिम मानता/मानती हूँ।<br/>
+                      (I also accept the Management’s decision regarding admission or dismissal as final.) *
+                    </label>
                   </div>
                 </div>
 
@@ -280,7 +285,7 @@ function AdmissionForm() {
                         checked={formData.isRobotChallenged}
                         onChange={(e) => setFormData({...formData, isRobotChallenged: e.target.checked})}
                       />
-                      <label htmlFor="not-robot">I'm not a robot</label>
+                      <label htmlFor="not-robot">मैं रोबोट नहीं हूँ (I'm not a robot)</label>
                     </div>
                     <div className="captcha-right">
                       <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" />
@@ -291,9 +296,9 @@ function AdmissionForm() {
                 </div>
 
               <div className="form-nav">
-                <button type="button" className="btn" onClick={prevStep} disabled={loading}>← Back</button>
+                <button type="button" className="btn" onClick={prevStep} disabled={loading}>← पीछे (Back)</button>
                 <button type="submit" className="btn btn-primary submit-admission" disabled={loading}>
-                  {loading ? "Processing..." : "🚀 Finalize & Submit Application"}
+                  {loading ? "Processing..." : "🚀 आवेदन जमा करें (Finalize & Submit)"}
                 </button>
               </div>
             </div>
