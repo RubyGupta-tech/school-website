@@ -5,7 +5,7 @@ const Founder = () => {
     <div className="container section" style={{ marginTop: '120px' }}>
       <div className="page-header">
         <h1>Our Director</h1>
-        <p className="subtitle">The Visionary Behind Kid's Campus Zone School</p>
+        <p className="subtitle" style={{ color: 'var(--primary-color)', fontWeight: '600' }}>The Visionary Behind Kid's Campus Zone School</p>
       </div>
 
       <div className="card" style={{ display: 'grid', gridTemplateColumns: '400px 1fr', gap: '50px', padding: '50px', textAlign: 'left' }}>
