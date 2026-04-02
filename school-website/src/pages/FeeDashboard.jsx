@@ -152,9 +152,20 @@ function FeeDashboard() {
               </div>
 
               <div className="dashboard-table-container card">
-
+                <h3>आज के नोटिस (Today's Notices)</h3>
+                <div className="mini-notices">
+                  {portalData.notices.map((n, i) => (
+                    <div key={i} className="notice-item" style={{ marginBottom: '15px', paddingBottom: '10px', borderBottom: '1px solid #f0f4f8' }}>
+                      <span className="notice-date">{n.date}</span>
+                      <h4 style={{ color: 'var(--primary-color)', margin: '5px 0' }}>{n.title}</h4>
+                      <p style={{ fontSize: '0.9rem', color: '#555' }}>{n.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
+
 
           {/* ACADEMIC TAB (Homework & Results) */}
           {activeTab === "academic" && (
