@@ -104,29 +104,33 @@
   gap: 1rem;
 }
 
-/* Navbar Logo Crop */
+/* Navbar Logo Crop - Fixed Visibility */
 .navbar-logo-container {
-  width: 100px;
-  height: 85px; /* Shorter height to crop top/bottom whitespace */
+  width: auto;      /* Let it adjust to brand name */
+  max-width: 150px;
+  height: 75px;     /* Tight height for cropping */
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 8px;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navbar-logo {
-  width: 140px; /* Slightly larger than container to allow cropping */
-  height: auto;
-  margin-top: -15px; /* Shift up to crop bottom whitespace/slogan if needed, or adjust to center logo */
+  height: 120px;    /* Larger than container to crop top/bottom */
+  width: auto;
+  object-fit: contain;
+  margin-top: 0;    /* Adjusted to center better */
 }
 
 .navbar-logo-link:hover .navbar-logo-container {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
+
 
 
 .navbar-brand {
