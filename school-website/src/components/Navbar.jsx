@@ -47,11 +47,26 @@ function Navbar() {
 
         <nav className={`navbar-right ${isMenuOpen ? 'mobile-active' : ''}`}>
           <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          
+          {/* Restored Dropdown */}
+          <div className="nav-dropdown">
+            <span className="dropdown-trigger">Our School ▾</span>
+            <div className="dropdown-content">
+              <Link to="/history" onClick={() => setIsMenuOpen(false)}>Our History</Link>
+              <Link to="/vision" onClick={() => setIsMenuOpen(false)}>Vision & Mission</Link>
+              <Link to="/founder" onClick={() => setIsMenuOpen(false)}>Our Director</Link>
+              <Link to="/principal" onClick={() => setIsMenuOpen(false)}>Principal's Desk</Link>
+              <Link to="/faculty" onClick={() => setIsMenuOpen(false)}>Faculty & Staff</Link>
+              <Link to="/anthem" onClick={() => setIsMenuOpen(false)}>School Anthem</Link>
+            </div>
+          </div>
+
           <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
           <Link to="/admissions" onClick={() => setIsMenuOpen(false)}>Admissions</Link>
           <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           <Link to="/fee-portal" className="btn-pay" onClick={() => setIsMenuOpen(false)}>Student Portal</Link>
         </nav>
+
       </header>
     </>
   );

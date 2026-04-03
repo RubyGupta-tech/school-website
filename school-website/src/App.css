@@ -629,7 +629,28 @@
     right: 0;
   }
   
-  .nav-dropdown { display: none; } /* Simplify for mobile, or convert to accordion if needed */
+  .nav-dropdown { 
+    display: block; 
+    width: 100%;
+  }
+  .dropdown-trigger {
+    display: block;
+    padding: 10px 0;
+    color: var(--primary-color);
+  }
+  .dropdown-content {
+    display: none;
+    position: static;
+    box-shadow: none;
+    padding-left: 20px;
+    border-top: none;
+    background: #fdfdfd;
+    animation: none;
+  }
+  .nav-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
   
   /* Layout adjustments */
   .features { padding: 40px 1rem; }
