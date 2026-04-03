@@ -1,20 +1,21 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
       <div className="top-bar">
         <div className="top-bar-left">
           <span>📞 +91 90656 11819</span>
           <span className="separator">|</span>
-          <span>📧 kidscampuszoneschool2019hzb@gmail.com</span>
-          <span className="separator">|</span>
-          <Link to="/portal-login" className="top-link" style={{ fontWeight: 'bold', color: '#ffd700' }}>Staff Login</Link>
+          <Link to="/portal-login" className="top-link staff-link-mobile">Staff Login</Link>
         </div>
 
         <div className="top-bar-right">
-          <Link to="/fee-portal" className="top-link">Student & Parent Portal</Link>
-          <a href="/admissions" className="top-link highlight">Click here to apply for Admission</a>
+          <Link to="/fee-portal" className="top-link">Parent Portal</Link>
+          <a href="/admissions" className="top-link highlight">Apply Now</a>
         </div>
       </div>
       <div className="marquee-container">
@@ -30,30 +31,26 @@ function Navbar() {
               <span className="brand-red">Kid's</span>{" "}
               <span className="brand-gold">Campus</span>{" "}
               <span className="brand-red">Zone</span>{" "}
-              <span className="brand-gold">School</span>
             </span>
-
           </Link>
         </div>
-        <nav className="navbar-right">
-          <Link to="/">Home</Link>
-          <div className="nav-dropdown">
-            <span className="dropdown-trigger">Our School ▾</span>
-            <div className="dropdown-content">
-              <Link to="/history">Our History</Link>
-              <Link to="/vision">Vision & Mission</Link>
-              <Link to="/founder">Our Director</Link>
-              <Link to="/principal">Principal's Desk</Link>
-              <Link to="/faculty">Faculty & Staff</Link>
-              <Link to="/admin-staff">Administrative Staff</Link>
-              <Link to="/anthem">School Anthem</Link>
-              <Link to="/school-hours">School Hours</Link>
-            </div>
-          </div>
-          <Link to="/about">About Us</Link>
-          <Link to="/admissions">Admissions</Link>
-          <Link to="/fee-portal" className="btn-pay">Student Portal</Link>
-          <Link to="/contact">Contact</Link>
+
+        <button 
+          className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`} 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav className={`navbar-right ${isMenuOpen ? 'mobile-active' : ''}`}>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+          <Link to="/admissions" onClick={() => setIsMenuOpen(false)}>Admissions</Link>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+          <Link to="/fee-portal" className="btn-pay" onClick={() => setIsMenuOpen(false)}>Student Portal</Link>
         </nav>
       </header>
     </>
