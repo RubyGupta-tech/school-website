@@ -26,8 +26,11 @@ function Navbar() {
       <header className="navbar">
         <div className="navbar-left">
           <Link to="/" className="navbar-logo-link">
-            <img src="/school-logo.png" alt="Kid's Campus Zone School Logo" className="navbar-logo" />
+            <div className="navbar-logo-container">
+              <img src="/school-logo.png" alt="Kid's Campus Zone School Logo" className="navbar-logo" />
+            </div>
             <span className="navbar-brand">
+
               <span className="brand-red">Kid's</span>{" "}
               <span className="brand-gold">Campus</span>{" "}
               <span className="brand-red">Zone</span>{" "}

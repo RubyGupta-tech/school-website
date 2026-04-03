@@ -104,18 +104,30 @@
   gap: 1rem;
 }
 
-.navbar-logo {
-  height: 140px;
-  width: auto;
-  border-radius: 8px;
+/* Navbar Logo Crop */
+.navbar-logo-container {
+  width: 100px;
+  height: 85px; /* Shorter height to crop top/bottom whitespace */
+  overflow: hidden;
+  border-radius: 12px;
   background: white;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.navbar-logo-link:hover .navbar-logo {
-  transform: scale(1.1);
+.navbar-logo {
+  width: 140px; /* Slightly larger than container to allow cropping */
+  height: auto;
+  margin-top: -15px; /* Shift up to crop bottom whitespace/slogan if needed, or adjust to center logo */
 }
+
+.navbar-logo-link:hover .navbar-logo-container {
+  transform: scale(1.1) rotate(2deg);
+}
+
 
 .navbar-brand {
   font-family: 'Outfit', sans-serif;
@@ -131,6 +143,7 @@
 .navbar-logo-link:hover .navbar-brand {
   transform: scale(1.02) translateX(5px);
 }
+
 
 
 .brand-red { color: #E31E24; } /* Bright Vibrant Red */
