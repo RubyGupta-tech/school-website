@@ -548,13 +548,13 @@
 /* --- Mobile Responsiveness --- */
 
 @media (max-width: 1024px) {
-  --header-height: 280px;
+  :root { --header-height: 280px; }
   .navbar-brand { font-size: 1.8rem; }
   .navbar-logo { height: 100px; }
 }
 
 @media (max-width: 768px) {
-  --header-height: 220px;
+  :root { --header-height: 220px; }
   
   .top-bar {
     padding: 5px 2%;
@@ -647,7 +647,7 @@
 }
 
 @media (max-width: 480px) {
-  --header-height: 200px;
+  :root { --header-height: 200px; }
   .navbar-brand { display: none; } /* Show only logo on very small phones */
   
   .bottom-decoration {
@@ -658,3 +658,4 @@
   }
   .butterfly { display: none; } /* Hide background butterflies to save performance/space */
 }
+
