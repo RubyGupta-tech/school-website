@@ -110,6 +110,11 @@
   border-radius: 8px;
   background: white;
   padding: 5px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-logo-link:hover .navbar-logo {
+  transform: scale(1.1);
 }
 
 .navbar-brand {
@@ -119,7 +124,14 @@
   letter-spacing: 0px;
   text-transform: uppercase;
   text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
+
+.navbar-logo-link:hover .navbar-brand {
+  transform: scale(1.02) translateX(5px);
+}
+
 
 .brand-red { color: #E31E24; } /* Bright Vibrant Red */
 .brand-gold { color: #FFD700; } /* Shiny Gold */
