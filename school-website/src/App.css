@@ -642,11 +642,13 @@
   }
 
   .navbar {
-    top: 105px; /* Offset for top-bar (65) + marquee (40) */
+    top: 115px; /* Increased from 105px to clear the marquee completely */
+    padding: 0.5rem 1.5rem;
+    min-height: 85px; 
   }
 
   .hero-slider {
-    margin-top: 195px; /* Final offset: top-bar(70) + marquee(40) + navbar(85) */
+    margin-top: 205px; /* Offset for top-bar(65) + marquee(40) + navbar(100) + spacing */
   }
 
   .mobile-menu-btn {
