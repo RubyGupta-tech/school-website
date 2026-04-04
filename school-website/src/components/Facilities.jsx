@@ -4,9 +4,9 @@ function Facilities() {
   const facilityList = [
     { title: "Play & Activity Zone", img: "/facility-sports.png", desc: "A safe and fun play area where children learn through games, creativity, and outdoor activities." },
     { title: "Smart Learning Classes", img: "/facility-smart-class.png", desc: "Modern classrooms with interactive tools making learning engaging and effective for young minds." },
-    { title: "Library & Reading Corner", img: "/facility-library.png", desc: "A rich collection of story books and learning material to build reading habits from an early age." },
     { title: "Science & Activity Lab", img: "/facility-lab.png", desc: "Hands-on activity lab for curiosity-driven experiments and creative exploration for primary students." }
   ];
+
 
   return (
     <section className="facilities-section">
