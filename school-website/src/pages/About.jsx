@@ -146,19 +146,58 @@ function About() {
         </div>
       </div>
 
-      {/* Contact Banner - Bilingual */}
+      {/* Contact Banner - Bilingual Redesign */}
       <div style={{ 
-        textAlign: 'center', 
-        padding: '3rem', 
-        background: 'linear-gradient(135deg, #fff8f0 0%, #fff 100%)', 
-        borderRadius: '20px',
-        border: '2px solid rgba(178,30,36,0.1)'
+        marginTop: '4rem',
+        padding: '3.5rem 2rem', 
+        background: 'linear-gradient(135deg, #1a365d 0%, #0d1b2e 100%)', 
+        borderRadius: '30px',
+        color: 'white',
+        textAlign: 'center',
+        boxShadow: '0 20px 50px rgba(26,54,93,0.3)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <h2 style={{ marginBottom: '1.5rem' }}>Connect With Us | संपर्क करें</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
-          <p>📍 **Address | पता:** Dhengura, Hazaribag, Jharkhand - 825301</p>
-          <p>📞 **Contact | संपर्क:** +91 90656 11819</p>
-          <p>📧 **Email:** kidscampuszoneschool2019hzb@gmail.com</p>
+        {/* Decorative background element */}
+        <div style={{ 
+          position: 'absolute', 
+          top: '-50px', 
+          right: '-50px', 
+          width: '200px', 
+          height: '200px', 
+          background: 'rgba(255,215,0,0.1)', 
+          borderRadius: '50%',
+          filter: 'blur(40px)'
+        }}></div>
+
+        <h2 style={{ color: '#FFD700', fontSize: '2.2rem', marginBottom: '1rem' }}>Connect With Us | संपर्क करें</h2>
+        <p style={{ opacity: '0.8', marginBottom: '3rem', fontSize: '1.1rem' }}>We are here to answer your questions and welcome your child to our family.</p>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          <div className="contact-card" style={{ background: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '15px' }}>📍</div>
+            <h4 style={{ color: '#FFD700', margin: '0 0 10px 0' }}>Address | पता</h4>
+            <p style={{ margin: 0, lineHeight: '1.6' }}>Dhengura, Hazaribag,<br />Jharkhand - 825301</p>
+          </div>
+
+          <div className="contact-card" style={{ background: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '15px' }}>📞</div>
+            <h4 style={{ color: '#FFD700', margin: '0 0 10px 0' }}>Contact | संपर्क</h4>
+            <p style={{ margin: 0, fontSize: '1.1rem', fontWeight: 'bold' }}>+91 90656 11819</p>
+            <p style={{ margin: '5px 0 0 0', fontSize: '0.9rem', opacity: '0.7' }}>+91 96933 47953</p>
+          </div>
+
+          <div className="contact-card" style={{ background: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '15px' }}>📧</div>
+            <h4 style={{ color: '#FFD700', margin: '0 0 10px 0' }}>Email | ईमेल</h4>
+            <p style={{ margin: 0, fontSize: '0.9rem', overflowWrap: 'anywhere' }}>kidscampuszoneschool2019hzb<br />@gmail.com</p>
+          </div>
+        </div>
+
+        <div style={{ marginTop: '3rem' }}>
+          <a href="/contact" className="btn btn-primary" style={{ padding: '15px 40px', borderRadius: '50px', fontSize: '1.1rem', background: '#B21E24', borderColor: '#B21E24' }}>
+            Visit Contact Page | संपर्क करें
+          </a>
         </div>
       </div>
 
