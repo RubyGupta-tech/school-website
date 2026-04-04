@@ -2,13 +2,14 @@ import "./AutoGallery.css";
 
 function AutoGallery() {
   const media = [
-    { url: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=400", title: "Annual Day" },
-    { url: "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=400", title: "Science Fair" },
-    { url: "https://images.unsplash.com/photo-1523050335456-c6bb74b67b8a?auto=format&fit=crop&q=80&w=400", title: "Classroom Life" },
-    { url: "https://images.unsplash.com/photo-1509062522246-3755907927d7?auto=format&fit=crop&q=80&w=400", title: "Sports Meet" },
-    { url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400", title: "Music Concert" },
-    { url: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=400", title: "Graduation" },
+    { url: "/schoolpic1.jpeg", title: "Classroom Activities" },
+    { url: "/schoolpic2.jpeg", title: "School Campus" },
+    { url: "/schoolpic3.jpeg", title: "Learning Together" },
+    { url: "/schoolpic4.jpeg", title: "Creative Time" },
+    { url: "/schoolpic5.jpeg", title: "Playground Fun" },
+    { url: "/schoolpic6.jpeg", title: "School Events" },
   ];
+
 
   const scrollMedia = [...media, ...media];
 

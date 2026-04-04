@@ -19,16 +19,19 @@ function VideoSection() {
 
         <div className="video-layout">
           <div className="featured-video card">
-            <img src={videos[0].url} alt="Featured" />
-            <div className="video-overlay">
-              <div className="play-btn large">▶</div>
-              <div className="video-meta">
-                <h3>{videos[0].title}</h3>
-                <p>Academy Events • 5:24</p>
-              </div>
+            <video 
+              src="/schoolvideo1.mp4" 
+              controls 
+              className="featured-video-player"
+              style={{ width: '100%', borderRadius: '20px', display: 'block' }}
+            />
+            <div className="video-meta" style={{ padding: '20px', background: 'white' }}>
+              <h3 style={{ color: 'var(--primary)', margin: '0 0 5px 0' }}>Kid's Campus School Tour</h3>
+              <p style={{ margin: 0, color: '#666' }}>Academy Highlights • 2025</p>
             </div>
           </div>
         </div>
+
 
         <div className="video-scroll-container">
           <div className="video-scroll-track">
