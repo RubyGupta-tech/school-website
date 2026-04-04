@@ -3,7 +3,7 @@
   --secondary-color: #FFD700;
   --accent-color: #FF8C00;
   --vibrant-green: #2ecc71;
-  --header-height: 240px;
+  --header-height: 280px; /* Increased to accommodate grand navbar */
 }
 
 /* Header Structure */
@@ -88,12 +88,14 @@
   right: 0;
   z-index: 1000;
   background: white;
-  padding: 0.5rem 2rem;
+  padding: 1rem 3rem; 
+  min-height: 160px;      /* Grand height for the massive logo */
   color: #2c3e50;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+  border-bottom: 3px solid rgba(255,215,0,0.4);
 }
 
 .navbar-logo-link {
@@ -104,26 +106,32 @@
   gap: 1rem;
 }
 
-/* Navbar Logo Crop - Big & Visible */
+/* Navbar Logo Crop - Grand & Unmissable */
 .navbar-logo-container {
-  width: 140px;      
-  height: 110px;     /* Much larger than before, but still crops top/bottom */
+  width: 200px;      /* Massive broadness */
+  height: 150px;     /* Massive height visibility */
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 20px;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 2px solid #FFD700; /* Gold border for prestige */
 }
 
 .navbar-logo {
-  height: 160px;    /* Scored larger to maintain 'Big' look */
+  height: 130%;    /* Slightly adjusted zoom for better centering */
   width: auto;
   object-fit: contain;
-  margin-top: -5px; 
+  margin: 0;       /* Removed manual offset to ensure perfect flex centering */
 }
+
+
+
+
 
 
 .navbar-logo-link:hover .navbar-logo-container {
