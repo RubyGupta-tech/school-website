@@ -6,15 +6,16 @@ import AutoGallery from "../components/AutoGallery";
 import VideoSection from "../components/VideoSection";
 import Facilities from "../components/Facilities";
 import SchoolDivider from "../components/SchoolDivider";
-import Stats from "../components/Stats";
+// Stats removed as per user request
+
 
 function Home() {
   return (
     <div className="page-home">
       <Hero />
-      <Stats />
       
       <div className="kids-illustration-banner">
+
         <img src="/illustration-study.png" alt="Happy Kids Studying" className="kids-art" />
       </div>
 

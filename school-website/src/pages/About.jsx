@@ -55,21 +55,8 @@ function About() {
         </div>
       </div>
 
-      {/* Stats - Bilingual Labels */}
-      <div className="grid" style={{ marginBottom: '3.5rem' }}>
-        <div className="stat card" style={{ padding: '2rem' }}>
-          <h3 style={{ fontSize: '2.5rem', color: '#B21E24' }}>2019</h3>
-          <p style={{ fontWeight: 'bold' }}>Established | स्थापना</p>
-        </div>
-        <div className="stat card" style={{ padding: '2rem' }}>
-          <h3 style={{ fontSize: '2.5rem', color: '#FFD700' }}>175+</h3>
-          <p style={{ fontWeight: 'bold' }}>Students | छात्र</p>
-        </div>
-        <div className="stat card" style={{ padding: '2rem' }}>
-          <h3 style={{ fontSize: '2.5rem', color: '#B21E24' }}>6+</h3>
-          <p style={{ fontWeight: 'bold' }}>Faculty | शिक्षक</p>
-        </div>
-      </div>
+      <hr style={{ margin: '3rem 0', opacity: '0.1' }} />
+
 
       {/* Vision & Mission - Bilingual */}
       <div style={{ marginBottom: '3.5rem', padding: '3rem', background: '#1a365d', color: 'white', borderRadius: '30px', boxShadow: '0 20px 40px rgba(26,54,93,0.2)' }}>
@@ -178,8 +165,5 @@ function About() {
     </div>
   );
 }
-
-export default About;
-
 
 export default About;
