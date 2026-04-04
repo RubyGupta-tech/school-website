@@ -619,10 +619,10 @@
     display: block;
   }
   .top-bar {
-    padding: 8px 3%;
-    font-size: 0.8rem;
-    flex-direction: column; /* Explicit stacking */
-    gap: 5px;
+    padding: 10px 3%;
+    font-size: 0.85rem;
+    flex-direction: column; 
+    gap: 8px;
     height: auto;
     position: fixed;
     top: 0;
@@ -632,23 +632,27 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 15px;
+    gap: 20px;
   }
 
   .marquee-container {
     position: fixed;
-    top: 65px; /* Offset to clear the stacked top-bar */
+    top: 75px; /* Safely below the 2-line top-bar */
+    height: 40px;
     z-index: 1001;
+    display: flex;
+    align-items: center;
   }
 
   .navbar {
-    top: 115px; /* Increased from 105px to clear the marquee completely */
+    top: 115px; /* Safely below TopBar(75) + Marquee(40) */
     padding: 0.5rem 1.5rem;
-    min-height: 85px; 
+    min-height: 90px; 
+    z-index: 1000;
   }
 
   .hero-slider {
-    margin-top: 205px; /* Offset for top-bar(65) + marquee(40) + navbar(100) + spacing */
+    margin-top: 210px; /* Offset for TopBar(75) + Marquee(40) + Navbar(90) + buffer */
   }
 
   .mobile-menu-btn {
