@@ -617,16 +617,36 @@
   /* Mobile Menu Button */
   .mobile-menu-btn {
     display: block;
-    width: 30px;
-    height: 20px;
-    position: relative;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1010;
+  .top-bar {
+    padding: 5px 3%;
+    font-size: 0.75rem;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    justify-content: center;
+    gap: 8px;
+    height: auto; /* Let it expand if content wraps */
   }
-  
-  .mobile-menu-btn span {
+
+  .top-bar-left, .top-bar-right {
+    gap: 10px;
+    justify-content: center;
+    width: 100%; /* Force stacking for clear visibility */
+  }
+
+  .marquee-container {
+    top: auto; /* Adjust based on dynamic top-bar */
+    position: fixed;
+    top: 55px; /* Fixed offset for stacked top-bar */
+  }
+
+  .navbar {
+    top: 95px; /* Offset for marquee + top-bar */
+  }
+
+  .hero-slider {
+    margin-top: 180px; /* Recalibrated margin for mobile header */
+  }
+
+  .mobile-menu-btn {
     display: block;
     position: absolute;
     height: 3px;
@@ -730,8 +750,12 @@
 }
 
 @media (max-width: 480px) {
-  :root { --header-height: 200px; }
-  .navbar-brand { display: none; } /* Show only logo on very small phones */
+  :root { --header-height: 220px; }
+  .navbar-brand { 
+    display: block !important; 
+    font-size: 0.95rem !important; 
+    max-width: 120px;
+  } 
   
   .bottom-decoration {
     height: 70px;
