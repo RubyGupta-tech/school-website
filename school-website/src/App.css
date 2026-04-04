@@ -649,25 +649,28 @@
 
   .navbar {
     top: 75px;
-    padding: 0.8rem 1.5rem;
-    min-height: 100px; /* Reduced from 160px for mobile balance */
+    padding: 0.5rem 1.5rem;
+    min-height: 85px; /* Compact height for mobile */
   }
 
   .navbar-logo-container {
-    width: 120px;
-    height: 90px;
-    border-radius: 12px;
+    width: 90px;      /* Smaller logo on mobile */
+    height: 70px;
+    border-radius: 8px;
   }
 
   .navbar-logo {
-    height: 110%;
+    height: 105%;
   }
 
   .navbar-brand {
-    font-size: 1.6rem;
+    font-size: 1.1rem; /* Much smaller to prevent 3-line wrapping */
+    max-width: 150px;
+    line-height: 1.2;
   }
 
   .navbar-right {
+    position: absolute; /* Crucial for top/right to work */
     top: 100%;
     right: -100%;
     width: 80%;
@@ -720,7 +723,7 @@
   /* Hero Overlay Fix */
   .hero-slider { 
     height: 60vh !important;
-    margin-top: 175px; /* Offset for TopBar(35) + Marquee(40) + Navbar(100) */
+    margin-top: 160px; /* Offset for TopBar(35) + Marquee(40) + Navbar(85) */
   }
   .hero-slide-content h1 { font-size: 2.2rem !important; }
   .hero-slide-content p { font-size: 1rem !important; }
