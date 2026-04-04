@@ -3,25 +3,33 @@ function About() {
     <div className="page-about container section" style={{ marginTop: 'var(--header-height)' }}>
 
       {/* Hero Banner / Logo Selection */}
-      <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-        <div className="about-logo-crop-container" style={{ 
-          width: '320px', 
-          height: '240px', 
+      <div style={{ textAlign: 'center', padding: '3rem 0 1rem' }}>
+        <div className="about-logo-container" style={{ 
+          width: 'auto',
+          maxWidth: '500px', 
+          height: '320px', 
           overflow: 'hidden', 
-          margin: '0 auto 1.5rem',
+          margin: '0 auto 2rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           background: 'white',
-          borderRadius: '20px',
-          boxShadow: '0 15px 35px rgba(0,0,0,0.08)'
+          borderRadius: '30px',
+          boxShadow: '0 20px 45px rgba(0,0,0,0.1)',
+          padding: '10px'
         }}>
           <img 
             src="/school-logo.png" 
             alt="Kid's Campus Zone School Logo" 
-            style={{ width: '130%', marginTop: '0' }} 
+            style={{ 
+              height: '110%', 
+              width: 'auto', 
+              objectFit: 'contain',
+              marginTop: '5px' 
+            }} 
           />
         </div>
+
         <h1 style={{ fontSize: '3rem', color: '#B21E24', marginBottom: '0.5rem', fontWeight: '900' }}>Kid's Campus Zone School</h1>
         <p style={{ fontSize: '1.4rem', color: '#555', fontStyle: 'italic', fontWeight: '600' }}>
           "Next Step, High Flight" | "नए कदम, ऊंची उड़ान"
