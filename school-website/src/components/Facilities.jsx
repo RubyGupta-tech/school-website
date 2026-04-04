@@ -3,7 +3,7 @@ import "./Facilities.css";
 function Facilities() {
   const facilityList = [
     { title: "Play & Activity Zone", img: "/facility-sports.png", desc: "A safe and fun play area where children learn through games, creativity, and outdoor activities." },
-    { title: "Smart Learning Classes", img: "/facility-smart-class.png", desc: "Modern classrooms with interactive tools making learning engaging and effective for young minds." },
+    { title: "Smart Learning Classes", img: "/facility-smart-class.png", desc: "Modern smart classrooms and computer classes equipped with interactive tools, making learning engaging, digital-ready, and effective for young minds." },
     { title: "Science & Activity Lab", img: "/facility-lab.png", desc: "Hands-on activity lab for curiosity-driven experiments and creative exploration for primary students." }
   ];
 
