@@ -2,11 +2,12 @@ import "./VideoSection.css";
 
 function VideoSection() {
   const videos = [
-    { id: 1, title: "Annual Sports Achievement", url: "https://images.unsplash.com/photo-1509062522246-3755907927d7?auto=format&fit=crop&q=80&w=600" },
-    { id: 2, title: "Cultural Festival Highlights", url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=300" },
-    { id: 3, title: "Modern Science Lab Tour", url: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=300" },
-    { id: 4, title: "Graduation Ceremony 2024", url: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=300" }
+    { id: 1, title: "School Campus Highlights", url: "/schoolpic1.jpeg" },
+    { id: 2, title: "Classroom Learning", url: "/schoolpic2.jpeg" },
+    { id: 3, title: "Playground Activities", url: "/schoolpic3.jpeg" },
+    { id: 4, title: "Special School Events", url: "/schoolpic4.jpeg" }
   ];
+
 
   return (
     <section className="video-highlights-section">
