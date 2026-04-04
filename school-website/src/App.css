@@ -646,7 +646,7 @@
   }
 
   .hero-slider {
-    margin-top: 180px; /* Recalibrated margin for mobile header */
+    margin-top: 195px; /* Final offset: top-bar(70) + marquee(40) + navbar(85) */
   }
 
   .mobile-menu-btn {
