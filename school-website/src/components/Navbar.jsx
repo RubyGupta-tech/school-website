@@ -20,8 +20,9 @@ function Navbar() {
       </div>
       <div className="marquee-container">
         <div className="marquee-text">
-          📢 Admissions Open 2025-26 | 🌟 Kid's Campus Zone School — नए कदम, ऊँची उड़ान | 📍 Dhengura, Hazaribag, Jharkhand | ☎ 9065611819, 9693347953
+          📢 Admissions Open | 🌟 Kid's Campus Zone School — नए कदम, ऊँची उड़ान | 📍 Dhengura, Hazaribag, Jharkhand | ☎ 9065611819, 9693347953
         </div>
+
       </div>
       <header className="navbar">
         <div className="navbar-left">
