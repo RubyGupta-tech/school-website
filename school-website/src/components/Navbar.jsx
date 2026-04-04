@@ -39,8 +39,8 @@ function Navbar() {
           </Link>
         </div>
 
-        <button 
-          className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`} 
+        <button
+          className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -51,7 +51,7 @@ function Navbar() {
 
         <nav className={`navbar-right ${isMenuOpen ? 'mobile-active' : ''}`}>
           <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-          
+
           {/* Restored Dropdown */}
           <div className="nav-dropdown">
             <span className="dropdown-trigger">Our School ▾</span>

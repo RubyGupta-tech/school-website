@@ -4,11 +4,11 @@ function About() {
 
       {/* Hero Banner / Logo Selection */}
       <div style={{ textAlign: 'center', padding: '3rem 0 1rem' }}>
-        <div className="about-logo-container" style={{ 
+        <div className="about-logo-container" style={{
           width: 'auto',
-          maxWidth: '500px', 
-          height: '320px', 
-          overflow: 'hidden', 
+          maxWidth: '500px',
+          height: '320px',
+          overflow: 'hidden',
           margin: '0 auto 2rem',
           display: 'flex',
           alignItems: 'center',
@@ -18,15 +18,15 @@ function About() {
           boxShadow: '0 20px 45px rgba(0,0,0,0.1)',
           padding: '10px'
         }}>
-          <img 
-            src="/school-logo.png" 
-            alt="Kid's Campus Zone School Logo" 
-            style={{ 
-              height: '110%', 
-              width: 'auto', 
+          <img
+            src="/school-logo.png"
+            alt="Kid's Campus Zone School Logo"
+            style={{
+              height: '110%',
+              width: 'auto',
               objectFit: 'contain',
-              marginTop: '5px' 
-            }} 
+              marginTop: '5px'
+            }}
           />
         </div>
 
@@ -45,18 +45,18 @@ function About() {
           <div className="lang-en">
             <h2 style={{ color: '#1a365d', borderLeft: '5px solid #FFD700', paddingLeft: '15px' }}>Welcome to Our School</h2>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-              Welcome to the official portal of **Kid's Campus Zone School**, Dhengura, Hazaribag. 
-              We are a premier educational institution dedicated to building a strong foundation for 
-              every child's future. Our motto, **"Next Step, High Flight"**, reflects our commitment 
+              Welcome to the official portal of **Kid's Campus Zone School**, Dhengura, Hazaribag.
+              We are a premier educational institution dedicated to building a strong foundation for
+              every child's future. Our motto, **"Next Step, High Flight"**, reflects our commitment
               to nurturing young minds from their first steps to the heights of success.
             </p>
           </div>
           <div className="lang-hi" style={{ background: 'rgba(255,215,0,0.05)', padding: '20px', borderRadius: '15px' }}>
             <h2 style={{ color: '#B21E24', borderLeft: '5px solid #B21E24', paddingLeft: '15px' }}>नमस्ते! आपका स्वागत है।</h2>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-              किड्स कैंपस जोन स्कूल, ढेंगुरा (हज़ारीबाग) की आधिकारिक वेबसाइट पर आपका हार्दिक स्वागत है! 
-              हम बच्चों के उज्जवल भविष्य की नींव रखने के लिए समर्पित हैं। हमारी टैगलाइन **"नए कदम, ऊंची उड़ान"** 
-              हमारे इसी लक्ष्य को दर्शाती है — जहाँ हम बच्चों को सही दिशा और संस्कार देकर सफलता की ऊंचाइयों 
+              किड्स कैंपस जोन स्कूल, ढेंगुरा (हज़ारीबाग) की आधिकारिक वेबसाइट पर आपका हार्दिक स्वागत है!
+              हम बच्चों के उज्जवल भविष्य की नींव रखने के लिए समर्पित हैं। हमारी टैगलाइन **"नए कदम, ऊंची उड़ान"**
+              हमारे इसी लक्ष्य को दर्शाती है — जहाँ हम बच्चों को सही दिशा और संस्कार देकर सफलता की ऊंचाइयों
               तक पहुँचने के योग्य बनाते हैं।
             </p>
           </div>
@@ -72,16 +72,16 @@ function About() {
           <div>
             <h2 style={{ color: '#FFD700' }}>Our Vision</h2>
             <p style={{ fontSize: '1.1rem', opacity: '0.9' }}>
-              Every child is unique. We provide a safe, fun, and creative environment where 
-              children learn through multi-sensory experiences, modern technology, and 
+              Every child is unique. We provide a safe, fun, and creative environment where
+              children learn through multi-sensory experiences, modern technology, and
               strong moral values. We aim to create confident lifelong learners.
             </p>
           </div>
           <div style={{ borderLeft: '1px solid rgba(255,255,255,0.2)', paddingLeft: '2rem' }}>
             <h2 style={{ color: '#FFD700' }}>हमारा उद्देश्य</h2>
             <p style={{ fontSize: '1.1rem', opacity: '0.9' }}>
-              हमारा मानना है कि हर बच्चा खास है। हम एक ऐसा सुरक्षित और मनोरंजक वातावरण प्रदान करते हैं 
-              जहाँ बच्चे खेल-खेल में आधुनिक शिक्षा, अनुशासन और नैतिक मूल्यों को सीख सकें। हमारा लक्ष्य 
+              हमारा मानना है कि हर बच्चा खास है। हम एक ऐसा सुरक्षित और मनोरंजक वातावरण प्रदान करते हैं
+              जहाँ बच्चे खेल-खेल में आधुनिक शिक्षा, अनुशासन और नैतिक मूल्यों को सीख सकें। हमारा लक्ष्य
               बच्चों में आत्मविश्वास और सीखने की ललक पैदा करना है।
             </p>
           </div>
@@ -91,7 +91,7 @@ function About() {
       {/* Leadership - Bilingual */}
       <div style={{ marginBottom: '3.5rem' }}>
         <h2 style={{ textAlign: 'center', marginBottom: '2.5rem', fontSize: '2rem' }}>Our Leadership | हमारा नेतृत्व</h2>
-        
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
           <div className="card" style={{ padding: '2.5rem', textAlign: 'left' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
@@ -102,12 +102,12 @@ function About() {
               </div>
             </div>
             <p style={{ marginBottom: '15px', color: '#555' }}>
-              Under the visionary leadership of Mr. Sarwar, the school has achieved milestones in 
-              early childhood education. His focus remains on quality, modernization, and 
+              Under the visionary leadership of Mr. Sarwar, the school has achieved milestones in
+              early childhood education. His focus remains on quality, modernization, and
               accessibility for every child.
             </p>
             <p style={{ color: '#777', fontStyle: 'italic', borderTop: '1px solid #eee', paddingTop: '10px' }}>
-              सरवर सर के कुशल मार्गदर्शन में स्कूल निरंतर प्रगति कर रहा है। उनका विजन बच्चों को 
+              सरवर सर के कुशल मार्गदर्शन में स्कूल निरंतर प्रगति कर रहा है। उनका विजन बच्चों को
               गुणवत्तापूर्ण और आधुनिक शिक्षा के साथ-साथ एक मजबूत आधार प्रदान करना है।
             </p>
           </div>
@@ -121,12 +121,12 @@ function About() {
               </div>
             </div>
             <p style={{ marginBottom: '15px', color: '#555' }}>
-              Principal Zubeda Khatoon ensures academic excellence and strict discipline. She 
-              is dedicated to the overall personality development of students through 
+              Principal Zubeda Khatoon ensures academic excellence and strict discipline. She
+              is dedicated to the overall personality development of students through
               individual attention and care.
             </p>
             <p style={{ color: '#777', fontStyle: 'italic', borderTop: '1px solid #eee', paddingTop: '10px' }}>
-              प्रिंसिपल जुबेदा खातून जी के नेतृत्व में स्कूल का शैक्षिक स्तर और अनुशासन सराहनीय है। 
+              प्रिंसिपल जुबेदा खातून जी के नेतृत्व में स्कूल का शैक्षिक स्तर और अनुशासन सराहनीय है।
               बच्चों के सर्वांगीण विकास (Overall Development) पर उनका विशेष ध्यान रहता है।
             </p>
           </div>
@@ -155,10 +155,10 @@ function About() {
       </div>
 
       {/* Contact Banner - Bilingual Redesign */}
-      <div style={{ 
+      <div style={{
         marginTop: '4rem',
-        padding: '3.5rem 2rem', 
-        background: 'linear-gradient(135deg, #1a365d 0%, #0d1b2e 100%)', 
+        padding: '3.5rem 2rem',
+        background: 'linear-gradient(135deg, #1a365d 0%, #0d1b2e 100%)',
         borderRadius: '30px',
         color: 'white',
         textAlign: 'center',
@@ -167,20 +167,20 @@ function About() {
         overflow: 'hidden'
       }}>
         {/* Decorative background element */}
-        <div style={{ 
-          position: 'absolute', 
-          top: '-50px', 
-          right: '-50px', 
-          width: '200px', 
-          height: '200px', 
-          background: 'rgba(255,215,0,0.1)', 
+        <div style={{
+          position: 'absolute',
+          top: '-50px',
+          right: '-50px',
+          width: '200px',
+          height: '200px',
+          background: 'rgba(255,215,0,0.1)',
           borderRadius: '50%',
           filter: 'blur(40px)'
         }}></div>
 
         <h2 style={{ color: '#FFD700', fontSize: '2.2rem', marginBottom: '1rem' }}>Connect With Us | संपर्क करें</h2>
         <p style={{ opacity: '0.8', marginBottom: '3rem', fontSize: '1.1rem' }}>We are here to answer your questions and welcome your child to our family.</p>
-        
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
           <div className="contact-card" style={{ background: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
             <div style={{ fontSize: '2rem', marginBottom: '15px' }}>📍</div>
