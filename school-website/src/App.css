@@ -619,28 +619,30 @@
     display: block;
   }
   .top-bar {
-    padding: 5px 3%;
-    font-size: 0.75rem;
-    flex-wrap: wrap; /* Allow wrapping if needed */
-    justify-content: center;
-    gap: 8px;
-    height: auto; /* Let it expand if content wraps */
+    padding: 8px 3%;
+    font-size: 0.8rem;
+    flex-direction: column; /* Explicit stacking */
+    gap: 5px;
+    height: auto;
+    position: fixed;
+    top: 0;
   }
 
   .top-bar-left, .top-bar-right {
-    gap: 10px;
+    display: flex;
     justify-content: center;
-    width: 100%; /* Force stacking for clear visibility */
+    width: 100%;
+    gap: 15px;
   }
 
   .marquee-container {
-    top: auto; /* Adjust based on dynamic top-bar */
     position: fixed;
-    top: 55px; /* Fixed offset for stacked top-bar */
+    top: 65px; /* Offset to clear the stacked top-bar */
+    z-index: 1001;
   }
 
   .navbar {
-    top: 95px; /* Offset for marquee + top-bar */
+    top: 105px; /* Offset for top-bar (65) + marquee (40) */
   }
 
   .hero-slider {
