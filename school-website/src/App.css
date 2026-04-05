@@ -3,7 +3,7 @@
   --secondary-color: #FFD700;
   --accent-color: #FF8C00;
   --vibrant-green: #2ecc71;
-  --header-height: 280px; /* Increased to accommodate grand navbar */
+  --header-height: 350px; /* Increased for desktop visibility */
 }
 
 /* Header Structure */
