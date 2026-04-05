@@ -15,7 +15,7 @@ function Navbar() {
 
         <div className="top-bar-right">
           <Link to="/fee-portal" className="top-link">Parent Portal</Link>
-          <a href="/admissions" className="top-link highlight">Apply Now</a>
+          <Link to="/admissions" className="top-link highlight">Apply Now</Link>
         </div>
       </div>
       <div className="marquee-container">

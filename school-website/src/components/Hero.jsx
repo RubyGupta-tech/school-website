@@ -1,5 +1,6 @@
 import "./Hero.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -59,8 +60,8 @@ function Hero() {
             <h1>{slide.title}</h1>
             <p>{slide.subtitle}</p>
             <div className="hero-btns">
-              <a href={slide.btnLink} className="btn btn-primary">{slide.btnText}</a>
-              <a href="/contact" className="btn btn-secondary">Inquire Now</a>
+              <Link to={slide.btnLink} className="btn btn-primary">{slide.btnText}</Link>
+              <Link to="/contact" className="btn btn-secondary">Inquire Now</Link>
             </div>
           </div>
         </div>
