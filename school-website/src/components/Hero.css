@@ -136,4 +136,8 @@
   .hero-btns {
     gap: 15px;
   }
+  
+  .slider-dots {
+    bottom: 25px; /* Moved lower to clear buttons */
+  }
 }
