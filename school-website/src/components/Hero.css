@@ -1,4 +1,4 @@
-/* Ken Burns Effect */
+/* Ken Burns Effect & Visibility Control */
 .hero-slide {
   position: absolute;
   top: 0;
@@ -8,26 +8,30 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  visibility: hidden; /* Prevent content leak */
+  pointer-events: none; /* Block all interactions when hidden */
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none; /* Disable interaction when hidden */
+  z-index: 1;
 }
 
 .hero-slide.active {
   opacity: 1;
-  pointer-events: auto; /* Enable interaction when visible */
-  animation: kenBurns 10s ease-in-out infinite alternate;
+  visibility: visible;
+  pointer-events: auto; /* Enable interaction only when active */
+  z-index: 10; /* Ensure active slide is on top */
+  animation: kenBurns 15s ease-in-out infinite alternate;
 }
 
 @keyframes kenBurns {
   0% { transform: scale(1); }
-  100% { transform: scale(1.15); }
+  100% { transform: scale(1.1); }
 }
 
 .hero-slider {
-  height: 90vh;
+  height: 85vh;
   position: relative;
   overflow: hidden;
   background: #000;
@@ -36,12 +40,12 @@
 .hero-content {
   text-align: center;
   color: white;
-  z-index: 10;
-  max-width: 800px;
-  padding: 0 20px;
-  transform: translateY(30px);
+  z-index: 15;
+  max-width: 900px;
+  padding: 0 30px;
+  transform: translateY(40px);
   opacity: 0;
-  transition: all 0.8s ease-out 0.5s;
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.6s;
 }
 
 .hero-slide.active .hero-content {
@@ -52,54 +56,84 @@
 .slide-label {
   display: inline-block;
   background: var(--accent-color);
-  padding: 5px 15px;
+  padding: 6px 18px;
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .hero-content h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  margin-bottom: 15px;
-  line-height: 1.1;
-  text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  font-size: clamp(2rem, 8vw, 4.2rem);
+  margin-bottom: 20px;
+  line-height: 1.25; /* Increased to fix overlapping letters */
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  margin-bottom: 30px;
-  opacity: 0.9;
+  font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+  margin-bottom: 40px;
+  opacity: 0.95;
+  line-height: 1.6;
 }
 
 .hero-btns {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
+  flex-wrap: wrap; /* Prevent button squeeze on small phones */
 }
 
+/* Dots & Controls */
 .slider-dots {
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 15px;
-  z-index: 20;
+  z-index: 30;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2.5px solid rgba(255,255,255,0.7);
   background: transparent;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .dot.active {
   background: white;
-  transform: scale(1.3);
+  border-color: white;
+  transform: scale(1.4);
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+/* --- Mobile Specific Tweaks --- */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 75vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+  }
+  
+  .hero-content p {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-btns {
+    gap: 15px;
+  }
 }
