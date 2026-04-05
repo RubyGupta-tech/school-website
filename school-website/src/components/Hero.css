@@ -12,10 +12,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none; /* Disable interaction when hidden */
 }
 
 .hero-slide.active {
   opacity: 1;
+  pointer-events: auto; /* Enable interaction when visible */
   animation: kenBurns 10s ease-in-out infinite alternate;
 }
 
